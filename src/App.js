@@ -2,8 +2,6 @@ import React from 'react';
 import type {Node} from 'react';
 import {SafeAreaView, StyleSheet, Text, useColorScheme, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-
-import {Colors, DebugInstructions, Header, LearnMoreLinks, ReloadInstructions} from 'react-native/Libraries/NewAppScreen';
 import BottomNav from './navigators/BottomNav';
 
 const App: () => Node = () => {
