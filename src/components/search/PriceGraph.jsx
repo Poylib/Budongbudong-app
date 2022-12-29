@@ -81,10 +81,9 @@ const Price = styled.View`
   width: 50%;
 `;
 const TextRow = styled.View`
-  width: 70%;
+  width: 80%;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
 `;
 
 const Percent = styled.Text`
@@ -94,7 +93,7 @@ const Percent = styled.Text`
 
 const PriceKind = styled.Text`
   margin: 4px 0;
-  width: 50%;
+  margin-right: 10px;
   font-size: 13px;
   color: grey;
 `;
@@ -105,7 +104,8 @@ const Profit = styled.View`
 
 const Line = styled.Text`
   width: 2px;
-  height: 70%;
+  height: 70%
+  margin-right:10px;
   background-color: ${greyColor};
 `;
 
