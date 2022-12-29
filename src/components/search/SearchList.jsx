@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { greyColor } from '../../theme';
+import TextBox from '../TextBox';
+import PriceGraph from './PriceGraph';
 const SearchList = ({ item }) => {
   return (
     <ListView>
       <Content>
-        <TextSection>
-          <StyledText>{item.text}</StyledText>
-        </TextSection>
-        <ImgSection></ImgSection>
+        <PriceGraph item={item} />
+        <ImgSection source={{ uri: 'https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg' }} />
       </Content>
     </ListView>
   );
@@ -16,17 +16,24 @@ const SearchList = ({ item }) => {
 
 const ListView = styled.View`
   padding: 20px 14px 0 14px;
+  width: 100%;
   height: 140px;
   align-items: center;
   background-color: ${greyColor};
 `;
 
 const Content = styled.View`
-  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
-  padding: 20px;
+  height: 400px;
+  padding: 20px 25px;
   border-radius: 7px;
   background-color: white;
+`;
+
+const TextSection = styled.View`
+  width: 80%;
 `;
 
 const StyledText = styled.Text`
@@ -35,11 +42,10 @@ const StyledText = styled.Text`
   color: black;
 `;
 
-const TextSection = styled.View`
-  /* flex: 1; */
-  width: 80%;
+const ImgSection = styled.Image`
+  border-radius: 10px;
+  width: 80px;
+  height: 80px;
 `;
-
-const ImgSection = styled.View``;
 
 export default SearchList;

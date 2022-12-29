@@ -1,0 +1,120 @@
+[
+  {
+    "id": 1,
+    "text": "범양",
+    "price": 1.1,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 0.5,
+    "profit": -5,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 2,
+    "text": "심미",
+    "price": 0.8,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 0.3,
+    "profit": 5,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 3,
+    "text": "아산나부빌",
+    "price": 1.7,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 1,
+    "profit": -1,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 4,
+    "text": "시흥능곡안인스빌",
+    "price": 1.1,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 0.8,
+    "profit": -5,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 5,
+    "text": "오룡한화",
+    "price": 2.6,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 1.5,
+    "profit": -15,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 6,
+    "text": "거성",
+    "price": 3.1,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 0.5,
+    "profit": 35,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 7,
+    "text": "성옥",
+    "price": 2.4,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 1.1,
+    "profit": -5,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 8,
+    "text": "대진",
+    "price": 1.3,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 0.5,
+    "profit": 25,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 9,
+    "text": "무지개",
+    "price": 1.6,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 0.5,
+    "profit": -5,
+    "graph": "assets/images/graph.jpg"
+  },
+
+  {
+    "id": 10,
+    "text": "장미6차",
+    "price": 2.0,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 0.7,
+    "profit": 35,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 11,
+    "text": "수청삼익",
+    "price": 1.5,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 0.5,
+    "profit": 3,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 12,
+    "text": "일신가든",
+    "price": 0.8,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 0.3,
+    "profit": 5,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 13,
+    "text": "세창리베하우스",
+    "price": 1.6,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 0.5,
+    "profit": 7,
+    "graph": "assets/images/graph.jpg"
+  }
+]
