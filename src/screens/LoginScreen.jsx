@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components/native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
+import { login } from '@react-native-seoul/kakao-login';
 import { StyleSheet, Text, View } from 'react-native';
 import Swiper from 'react-native-swiper';
 
 const statusBarHeight = getStatusBarHeight(true);
 
 const LoginScreen = () => {
+  const [result, setResult] = useState('');
+  const signInWithKakao = async () => {
+    try {
+      const token = await login();
+      setResult(JSON.stringify(token));
+      console.log(result);
+    } catch (err) {
+      console.error('login err', err);
+    }
+  };
   return (
     <>
       <Swiper //
@@ -26,7 +37,14 @@ const LoginScreen = () => {
           <CenterText>And simple</CenterText>
         </SwiperView>
       </Swiper>
-      <SocialLogin></SocialLogin>
+      <SocialLogin>
+        <KakaoLogin //
+          activeOpacity={1}
+          onPress={() => signInWithKakao()}>
+          <KakaoImg source={require('../../assets/icons/kakao_login.png')} />
+          <KakaoText>카카오톡 로그인</KakaoText>
+        </KakaoLogin>
+      </SocialLogin>
     </>
   );
 };
@@ -52,13 +70,27 @@ const SocialLogin = styled.View`
   height: 30%;
   width: 100%;
   padding: 30px 20px;
-  background-color: blue;
 `;
 
 const KakaoLogin = styled.TouchableOpacity`
   width: 100%;
   height: 50px;
-  background-color: lavenderblush;
+  background-color: #fee500;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 `;
 
+const KakaoImg = styled.Image`
+  position: absolute;
+  left: 85px;
+  width: 20px;
+  height: 20px;
+`;
+
+const KakaoText = styled.Text`
+  font-size: 20px;
+  margin: 0 auto;
+`;
 export default LoginScreen;

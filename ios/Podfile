@@ -6,7 +6,13 @@ install! 'cocoapods', :deterministic_uuids => false
 
 target 'Budongbudong' do
   config = use_native_modules!
-
+  pod 'KakaoSDKCommon'  # 필수 요소를 담은 공통 모듈
+  pod 'KakaoSDKAuth'  # 사용자 인증
+  pod 'KakaoSDKUser'  # 카카오 로그인, 사용자 관리
+  pod 'KakaoSDKTalk'  # 친구, 메시지(카카오톡)
+  pod 'KakaoSDKStory'  # 카카오스토리 
+  pod 'KakaoSDKShare'  # 메시지(카카오톡 공유)
+  pod 'KakaoSDKTemplate'  # 메시지 템플릿 
   # Flags change depending on the env values.
   flags = get_default_flags()
 
@@ -41,3 +47,4 @@ target 'Budongbudong' do
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
 end
+

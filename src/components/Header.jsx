@@ -20,12 +20,12 @@ const FixedHeader = () => {
             <SortingText>수익순</SortingText>
           </SortTouch>
           <Line bold={false} />
-          <SortTouch>
-            <SortingText activeOpacity={1}>가격순</SortingText>
+          <SortTouch activeOpacity={1}>
+            <SortingText>가격순</SortingText>
           </SortTouch>
           <Line bold={false} />
-          <SortTouch>
-            <SortingText activeOpacity={1}>인기순</SortingText>
+          <SortTouch activeOpacity={1}>
+            <SortingText>인기순</SortingText>
           </SortTouch>
         </Sort>
         <Filter activeOpacity={1}>
