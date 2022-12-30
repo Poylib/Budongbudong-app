@@ -16,14 +16,14 @@ const LoginScreen = () => {
         activeDotStyle={{ width: 25 }}
         autoplay={true}
         autoplayTimeout={1.5}>
-        <SwiperView style={styles.slide1}>
-          <CenterText style={styles.text}>Hello Swiper</CenterText>
+        <SwiperView>
+          <CenterText>Hello Swiper</CenterText>
         </SwiperView>
-        <SwiperView style={styles.slide2}>
-          <CenterText style={styles.text}>Beautiful</CenterText>
+        <SwiperView>
+          <CenterText>Beautiful</CenterText>
         </SwiperView>
-        <SwiperView style={styles.slide3}>
-          <CenterText style={styles.text}>And simple</CenterText>
+        <SwiperView>
+          <CenterText>And simple</CenterText>
         </SwiperView>
       </Swiper>
       <SocialLogin></SocialLogin>
@@ -60,32 +60,5 @@ const KakaoLogin = styled.TouchableOpacity`
   height: 50px;
   background-color: lavenderblush;
 `;
-
-const styles = StyleSheet.create({
-  wrapper: {},
-  slide1: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB',
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#97CAE5',
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-  },
-});
 
 export default LoginScreen;
