@@ -42,7 +42,7 @@ const FixedHeader = () => {
 const HeaderContainer = styled.View`
   padding: 10px 0;
   width: 100%;
-  height: ${SCREEN_HEIGHT / 8}px;
+  height: ${SCREEN_HEIGHT / 7}px;
   background-color: white;
   border-bottom: 2px solid grey;
   align-items: center;
@@ -50,7 +50,7 @@ const HeaderContainer = styled.View`
 `;
 
 const SearchBar = styled.TextInput`
-  padding: 14px;
+  padding: 12px;
   margin: 0 10px;
   width: 90%;
   border: 1px solid grey;

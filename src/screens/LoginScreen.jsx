@@ -16,15 +16,15 @@ const LoginScreen = () => {
         activeDotStyle={{ width: 25 }}
         autoplay={true}
         autoplayTimeout={1.5}>
-        <View style={styles.slide1}>
-          <Text style={styles.text}>Hello Swiper</Text>
-        </View>
-        <View style={styles.slide2}>
-          <Text style={styles.text}>Beautiful</Text>
-        </View>
-        <View style={styles.slide3}>
-          <Text style={styles.text}>And simple</Text>
-        </View>
+        <SwiperView style={styles.slide1}>
+          <CenterText style={styles.text}>Hello Swiper</CenterText>
+        </SwiperView>
+        <SwiperView style={styles.slide2}>
+          <CenterText style={styles.text}>Beautiful</CenterText>
+        </SwiperView>
+        <SwiperView style={styles.slide3}>
+          <CenterText style={styles.text}>And simple</CenterText>
+        </SwiperView>
       </Swiper>
       <SocialLogin></SocialLogin>
     </>
@@ -38,10 +38,27 @@ const LoginScreenContainer = styled.View`
   justify-content: center;
 `;
 
+const SwiperView = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+const CenterText = styled.Text`
+  font-size: 40px;
+  font-weight: bold;
+`;
+
 const SocialLogin = styled.View`
   height: 30%;
   width: 100%;
-  background-color: white;
+  padding: 30px 20px;
+  background-color: blue;
+`;
+
+const KakaoLogin = styled.TouchableOpacity`
+  width: 100%;
+  height: 50px;
+  background-color: lavenderblush;
 `;
 
 const styles = StyleSheet.create({
