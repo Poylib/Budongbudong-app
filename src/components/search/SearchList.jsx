@@ -1,30 +1,30 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { greyColor } from '../../theme';
+import { greyColor, backGroundColor } from '../../theme';
 import TextBox from '../TextBox';
 import PriceGraph from './PriceGraph';
 const SearchList = ({ item }) => {
   return (
-    <ListView>
+    <SearchListContainer>
       <Content>
         <PriceGraph item={item} />
         <ImgSection source={{ uri: 'https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg' }} />
       </Content>
-    </ListView>
+    </SearchListContainer>
   );
 };
 
-const ListView = styled.View`
-  padding: 20px 14px 0 14px;
+const SearchListContainer = styled.View`
+  padding: 14px;
   width: 100%;
   height: 140px;
-  align-items: center;
-  background-color: ${greyColor};
+  background-color: ${backGroundColor};
 `;
 
 const Content = styled.View`
   flex-direction: row;
   justify-content: space-between;
+  /* align-items: center; */
   width: 100%;
   height: 400px;
   padding: 20px 25px;

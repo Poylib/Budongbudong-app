@@ -15,7 +15,7 @@ const PriceGraph = ({ item }) => {
         <Price>
           <TextRow>
             <PriceKind>예측</PriceKind>
-            <Line />
+            <Line bold={false} />
             {item.profit > 0 ? (
               <Profit>
                 <Ionicons name={'caret-up'} color={redColor} />
@@ -30,12 +30,12 @@ const PriceGraph = ({ item }) => {
           </TextRow>
           <TextRow>
             <PriceKind>매매가</PriceKind>
-            <Line />
+            <Line bold={false} />
             <PriceText>{item.price} 억</PriceText>
           </TextRow>
           <TextRow>
             <PriceKind>전세가</PriceKind>
-            <Line />
+            <Line bold={false} />
             <PriceText>{item.leasePrice} 억</PriceText>
           </TextRow>
         </Price>
@@ -93,7 +93,6 @@ const Percent = styled.Text`
 
 const PriceKind = styled.Text`
   margin: 4px 0;
-  margin-right: 10px;
   font-size: 13px;
   color: grey;
 `;
@@ -102,11 +101,12 @@ const Profit = styled.View`
   align-items: center;
 `;
 
-const Line = styled.Text`
-  width: 2px;
+export const Line = styled.Text`
+  width:${({ bold }) => (bold ? '2px' : '1px')};
   height: 70%
+  margin: 0 7px;
   margin-right:10px;
-  background-color: ${greyColor};
+  background-color:${({ bold }) => (bold ? 'black' : 'lightgrey')};
 `;
 
 const PriceText = styled.Text`

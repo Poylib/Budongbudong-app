@@ -1,16 +1,17 @@
-import { View, Text, StyleSheet, StatusBar, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
-import axios from 'axios';
 import FixedHeader from '../components/Header';
 import SearchList from '../components/search/SearchList';
-import { useEffect } from 'react';
 import data from '../../mock/data.json';
+import { greyColor } from '../theme';
 const SearchScreen = () => {
   return (
     <>
-      <FixedHeader />
-      <StyledFlatList //
+      <SafeAreaView style={{ backgroundColor: 'white', borderBottomColor: greyColor, borderBottomWidth: 1 }} edges={'top'}>
+        <FixedHeader />
+      </SafeAreaView>
+      <FlatList //
         data={data}
         renderItem={SearchList}
         keyExtractor={item => item.id.toString()}
@@ -19,9 +20,5 @@ const SearchScreen = () => {
     </>
   );
 };
-
-const StyledFlatList = styled.FlatList``;
-
-const StyledContainer = styled.View``;
 
 export default SearchScreen;
