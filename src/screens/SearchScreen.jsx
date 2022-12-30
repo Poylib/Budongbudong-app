@@ -8,7 +8,7 @@ import { greyColor } from '../theme';
 const SearchScreen = () => {
   return (
     <>
-      <SafeAreaView style={{ backgroundColor: 'white', borderBottomColor: greyColor, borderBottomWidth: 1 }} edges={'top'}>
+      <SafeAreaView style={{ backgroundColor: 'white', borderBottomColor: greyColor, borderBottomWidth: 1 }} edges={['top']}>
         <FixedHeader />
       </SafeAreaView>
       <FlatList //

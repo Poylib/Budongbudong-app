@@ -8,7 +8,9 @@ const SearchList = ({ item }) => {
     <SearchListContainer>
       <Content>
         <PriceGraph item={item} />
-        <ImgSection source={{ uri: 'https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg' }} />
+        <ImegeSection>
+          <Img source={{ uri: 'https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg' }} />
+        </ImegeSection>
       </Content>
     </SearchListContainer>
   );
@@ -42,10 +44,17 @@ const StyledText = styled.Text`
   color: black;
 `;
 
-const ImgSection = styled.Image`
+const Img = styled.Image`
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
-  width: 80px;
-  height: 80px;
+`;
+
+const ImegeSection = styled.View`
+  border: 0.5px solid lightgray;
+  border-radius: 10px;
+  width: 85px;
+  height: 85px;
 `;
 
 export default SearchList;
