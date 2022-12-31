@@ -13,11 +13,13 @@ const MyPageScreen = () => {
   return (
     <SafeAreaView>
       <View>
-        <Text style={{ width: 40, backgroundColor: 'blue' }}>MyPageScreen</Text>
+        <Text>MyPageScreen</Text>
       </View>
       <TouchableOpacity //
         onPress={() => removeValue()}
-        style={{ backgroundColor: 'red', height: 40 }}></TouchableOpacity>
+        style={{ backgroundColor: 'grey', height: 40, width: 90, borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+        <Text style={{}}>로그아웃 버튼</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
