@@ -5,38 +5,33 @@ import { NavigationContainer } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import BottomNav from './navigators/BottomNav';
 import LoginScreen from './screens/LoginScreen';
-
+import Root from './navigators/Root';
 const App: () => Node = () => {
   const [loginCheck, setLoginCheck] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
   useEffect(() => {
     (async () => {
       try {
-        const value = await AsyncStorage.getItem('storage_key');
+        const value = await AsyncStorage.getItem('login');
         if (value !== null) {
-          setLoginCheck(true);
+          setIsLogin(true);
+          console.log(value);
         }
       } catch (error) {
         console.log(error);
       }
     })();
-  }, []);
-
-  const storeData = async value => {
-    try {
-      await AsyncStorage.setItem('@storage_key', value);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  }, [loginCheck]);
 
   return (
     <>
-      {loginCheck ? (
+      {isLogin ? (
         <NavigationContainer>
-          <BottomNav />
+          {/* <BottomNav /> */}
+          <Root />
         </NavigationContainer>
       ) : (
-        <LoginScreen />
+        <LoginScreen setLoginCheck={setLoginCheck} />
       )}
     </>
   );

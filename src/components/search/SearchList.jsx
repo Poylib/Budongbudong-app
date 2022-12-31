@@ -1,11 +1,20 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import { useNavigation } from '@react-navigation/native';
 import { greyColor, backGroundColor } from '../../theme';
 import TextBox from '../TextBox';
 import PriceGraph from './PriceGraph';
+
 const SearchList = ({ item }) => {
+  const navigation = useNavigation();
+  const goDetail = () => {
+    navigation.navigate('Stack', { screen: 'Detail' });
+  };
+
   return (
-    <SearchListContainer>
+    <SearchListContainer //
+      activeOpacity={1}
+      onPress={goDetail}>
       <Content>
         <PriceGraph item={item} />
         <ImegeSection>
@@ -16,7 +25,7 @@ const SearchList = ({ item }) => {
   );
 };
 
-const SearchListContainer = styled.View`
+const SearchListContainer = styled.TouchableOpacity`
   padding: 14px;
   width: 100%;
   height: 140px;

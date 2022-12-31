@@ -13,7 +13,7 @@ const SearchScreen = () => {
       </SafeAreaView>
       <FlatList //
         data={data}
-        renderItem={SearchList}
+        renderItem={({ item }) => <SearchList item={item} />}
         keyExtractor={item => item.id.toString()}
         bounces={false}
       />
