@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import BottomNav from './BottomNav';
 import DetailStack from './DetailStack';
 import LoginScreen from '../screens/LoginScreen';
+import SplashScreen from '../screens/SplashScreen';
 
 const Root = () => {
   const RootNav = createNativeStackNavigator();
   return (
-    <RootNav.Navigator>
+    <RootNav.Navigator initialRouteName='SplashScreen'>
+      <RootNav.Screen //
+        name='SplashScreen'
+        component={SplashScreen}
+        options={{ headerShown: false }}
+      />
+      <RootNav.Screen //
+        name='Login'
+        component={LoginScreen}
+        options={{ headerShown: false }}
+      />
       <RootNav.Screen //
         name='Tabs'
         component={BottomNav}
-        // component={LoginScreen}
         options={{ headerShown: false }}
       />
       <RootNav.Screen //

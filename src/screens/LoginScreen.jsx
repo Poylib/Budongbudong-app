@@ -6,27 +6,30 @@ import { login } from '@react-native-seoul/kakao-login';
 import { StyleSheet, Text, View } from 'react-native';
 import Swiper from 'react-native-swiper';
 import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
 
 const statusBarHeight = getStatusBarHeight(true);
 
-const LoginScreen = setLoginCheck => {
+const storeData = async value => {
+  try {
+    const jsonValue = JSON.stringify(value);
+    await AsyncStorage.setItem('login', jsonValue);
+    console.log('Store data done');
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const LoginScreen = () => {
+  const navigation = useNavigation();
   const signInWithKakao = async () => {
     try {
       const data = await login();
       const test = JSON.parse(JSON.stringify(data));
-      console.log('test : ', test);
       storeData(test.accessToken);
-      setLoginCheck(true);
+      navigation.replace('Tabs');
     } catch (err) {
       console.error('login err', err);
-    }
-  };
-
-  const storeData = async value => {
-    try {
-      await AsyncStorage.setItem('login', value);
-    } catch (error) {
-      console.log(error);
     }
   };
   return (
