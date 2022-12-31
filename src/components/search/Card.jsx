@@ -5,7 +5,7 @@ import { greyColor, backGroundColor } from '../../theme';
 import TextBox from '../TextBox';
 import PriceGraph from './PriceGraph';
 
-const SearchList = ({ item }) => {
+const Card = ({ item }) => {
   const navigation = useNavigation();
   const goDetail = () => {
     navigation.navigate('Stack', { screen: 'Detail' });
@@ -66,4 +66,4 @@ const ImegeSection = styled.View`
   height: 85px;
 `;
 
-export default SearchList;
+export default Card;

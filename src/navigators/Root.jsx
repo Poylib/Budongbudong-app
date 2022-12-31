@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import BottomNav from './BottomNav';
+import BottomTabs from './BottomTabs';
 import DetailStack from './DetailStack';
 import LoginScreen from '../screens/LoginScreen';
 import SplashScreen from '../screens/SplashScreen';
@@ -22,7 +22,7 @@ const Root = () => {
       />
       <RootNav.Screen //
         name='Tabs'
-        component={BottomNav}
+        component={BottomTabs}
         options={{ headerShown: false }}
       />
       <RootNav.Screen //

@@ -9,7 +9,7 @@ import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 
-const BottomNav = () => {
+const BottomTabs = () => {
   const Tab = createBottomTabNavigator();
   return (
     <Tab.Navigator
@@ -55,4 +55,4 @@ const BottomNav = () => {
     </Tab.Navigator>
   );
 };
-export default BottomNav;
+export default BottomTabs;
