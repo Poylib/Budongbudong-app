@@ -102,10 +102,9 @@ const Profit = styled.View`
 `;
 
 export const Line = styled.Text`
-  width:${({ bold }) => (bold ? '2px' : '1px')};
+  width:${({ bold }) => (bold ? '1.3px' : '1px')};
   height: 70%
   margin: 0 7px;
-  margin-right:10px;
   background-color:${({ bold }) => (bold ? 'black' : 'lightgrey')};
 `;
 

@@ -8,10 +8,14 @@ const DetailStack = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        headerBackTitleVisible: false,
       }}>
       <Stack.Screen //
         name='Detail'
         component={DetailScreen}
+        options={{
+          title: '상세정보',
+        }}
       />
     </Stack.Navigator>
   );

@@ -2,8 +2,14 @@ import styled from 'styled-components/native';
 import { Button, Text, TouchableOpacity, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
+import { useNavigation } from '@react-navigation/native';
 import { blueColor, greyColor } from '../../theme';
+
 const Title = () => {
+  const navigation = useNavigation();
+  const goDetail = () => {
+    navigation.push('Stack', { screen: 'Detail' });
+  };
   return (
     <TitleContainer>
       <Ranking>
@@ -22,7 +28,7 @@ const Title = () => {
           <SmallRanking>7위</SmallRanking>
         </RankBox>
         <TextBox>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={goDetail}>
             <LightText>반포센트럴자이</LightText>
           </TouchableOpacity>
           <BoldText>반포자이</BoldText>

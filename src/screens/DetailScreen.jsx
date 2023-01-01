@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import InvestmentScore from '../components/detail/InvestmentScore';
 import Title from '../components/detail/Title';
 
 const DetailScreen = () => {
@@ -6,6 +7,7 @@ const DetailScreen = () => {
     <DetailScreenContainer //
       bounces={false}>
       <Title />
+      <InvestmentScore />
     </DetailScreenContainer>
   );
 };
