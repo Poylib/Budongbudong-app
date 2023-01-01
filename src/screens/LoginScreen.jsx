@@ -7,6 +7,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Swiper from 'react-native-swiper';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
+import { blueColor } from '../theme';
 
 const statusBarHeight = getStatusBarHeight(true);
 
@@ -42,13 +43,54 @@ const LoginScreen = () => {
         autoplay={true}
         autoplayTimeout={1.5}>
         <SwiperView>
-          <CenterText>Hello Swiper</CenterText>
+          <TextRow>
+            <BlackText>내 상황에 맞는</BlackText>
+          </TextRow>
+          <TextRow>
+            <BlackText>아파트 거래</BlackText>
+            <BlueText> 시뮬레이션</BlueText>
+          </TextRow>
         </SwiperView>
         <SwiperView>
-          <CenterText>Beautiful</CenterText>
+          <TextRow>
+            <BlackText>내</BlackText>
+            <BlueText> 선호도</BlueText>
+            <BlackText>에 따른</BlackText>
+          </TextRow>
+          <TextRow>
+            <BlackText>전국 아파트</BlackText>
+            <BlueText> 매물 추천</BlueText>
+          </TextRow>
         </SwiperView>
         <SwiperView>
-          <CenterText>And simple</CenterText>
+          <TextRow>
+            <BlackText>전국 어디서든</BlackText>
+          </TextRow>
+          <TextRow>
+            <BlueText>딱 </BlueText>
+            <BlackText>맞는 아파트</BlackText>
+            <BlueText> 분석</BlueText>
+          </TextRow>
+        </SwiperView>
+        <SwiperView>
+          <TextRow>
+            <BlackText>거래시기별</BlackText>
+          </TextRow>
+          <TextRow>
+            <BlueText>세금 </BlueText>
+            <BlackText>비교 및</BlackText>
+            <BlueText> 타이밍 </BlueText>
+            <BlackText>까지</BlackText>
+          </TextRow>
+        </SwiperView>
+        <SwiperView>
+          <TextRow>
+            <BlackText>빅데이터 기반</BlackText>
+          </TextRow>
+          <TextRow>
+            <BlackText>부동산</BlackText>
+            <BlueText> 시황분석 레포트</BlueText>
+          </TextRow>
         </SwiperView>
       </Swiper>
       <SocialLogin>
@@ -75,9 +117,18 @@ const SwiperView = styled.View`
   justify-content: center;
   align-items: center;
 `;
-const CenterText = styled.Text`
-  font-size: 40px;
-  font-weight: bold;
+
+const TextRow = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+const BlackText = styled.Text`
+  font-size: 30px;
+`;
+const BlueText = styled.Text`
+  font-size: 30px;
+  color: ${blueColor};
 `;
 
 const SocialLogin = styled.View`
