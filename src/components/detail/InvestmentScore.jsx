@@ -6,7 +6,7 @@ import { Line } from '../search/PriceGraph';
 
 const InvestmentScore = () => {
   return (
-    <Container>
+    <DetailContainer>
       <TitleText>투자 항목 점수</TitleText>
       <ContentColumn>
         <ContentRow>
@@ -42,10 +42,10 @@ const InvestmentScore = () => {
           </StatsBox>
         </ContentRow>
       </ContentColumn>
-    </Container>
+    </DetailContainer>
   );
 };
-export const Container = styled.View`
+export const DetailContainer = styled.View`
   width: 100%;
   padding: 25px 15px;
   margin-bottom: 15px;
@@ -54,10 +54,12 @@ export const Container = styled.View`
 export const TitleText = styled.Text`
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 `;
 
-const ContentColumn = styled.View``;
+const ContentColumn = styled.View`
+  margin-top: 20px;
+`;
 const ContentRow = styled.View`
   flex-direction: row;
   justify-content: space-between;
