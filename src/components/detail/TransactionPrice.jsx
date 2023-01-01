@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import { DetailContainer, TitleText } from './InvestmentScore';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import { greyColor } from '../../theme';
+import { BlueText } from '../swiper/LoginSwiper';
+import CategoryBtn from './CategoryBtn';
+import { periodData, priceData } from '../../constant/CategoryBtn';
 
 const TransactionPrice = () => {
+  const [pickKind, setPickKind] = useState(priceData.dataSet[0].title);
+  const [pickPeriod, setpickPeriod] = useState(periodData.dataSet[0].title);
+  console.log(pickPeriod);
   return (
     <DetailContainer>
       <NameRow>
@@ -18,7 +24,26 @@ const TransactionPrice = () => {
           <AntDesign name={'down'} size={10} />
         </TitleToggle>
       </NameRow>
-      <PriceCategory></PriceCategory>
+      <CategoryBtn //
+        data={priceData}
+        setFunc={setPickKind}
+      />
+      <Average>
+        <AverageView>
+          <Text style={{ fontSize: 12 }}>최근 실거래가 평균</Text>
+          <Text style={{ fontSize: 12 }}>(3건 평균)</Text>
+        </AverageView>
+        <AverageView>
+          <BlueText style={{ fontWeight: 'bold', fontSize: 30 }}>33.4억원</BlueText>
+        </AverageView>
+      </Average>
+      <HorizontalBorder />
+      <PeriodCategory>
+        <CategoryBtn //
+          data={periodData}
+          setFunc={setpickPeriod}
+        />
+      </PeriodCategory>
     </DetailContainer>
   );
 };
@@ -27,24 +52,39 @@ const NameRow = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
-const TitleToggle = styled.TouchableOpacity`
+const TitleToggle = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   height: 25px;
   width: 85px;
   justify-content: center;
+  background-color: white;
   flex-direction: row;
+  border-radius: 10px;
 `;
 
-const PriceCategory = styled.View`
+const Average = styled.View`
   flex-direction: row;
-  background-color: ${greyColor};
-  border-radius: 15px;
-  margin: 10px 0;
-  width: 100%;
-  height: 30px;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 90px;
 `;
+
+const AverageView = styled.View`
+  width: 50%;
+  align-items: center;
+`;
+
+const HorizontalBorder = styled.View`
+  position: static;
+  left: -20px;
+  width: 110%;
+  height: 2px;
+  background-color: ${greyColor};
+`;
+
+const PeriodCategory = styled.View``;
 
 const styles = StyleSheet.create({
   shadow: {
@@ -52,8 +92,6 @@ const styles = StyleSheet.create({
     shadowOffset: { height: 1.4, width: 0 }, // IOS
     shadowOpacity: 0.3, // IOS
     shadowRadius: 2, //IOS
-    backgroundColor: '#fff',
-    borderRadius: 8,
     elevation: 5, // Android
     alignItems: 'center',
   },

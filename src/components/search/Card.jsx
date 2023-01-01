@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components/native';
 import { useNavigation } from '@react-navigation/native';
 import { greyColor, backGroundColor } from '../../theme';
-import TextBox from '../TextBox';
 import PriceGraph from './PriceGraph';
 
 const Card = ({ item }) => {
