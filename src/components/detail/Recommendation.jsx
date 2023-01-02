@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FlatList, Image, Text, View } from 'react-native';
 import styled from 'styled-components/native';
+import { AirbnbRating } from 'react-native-ratings';
 import { blueColor, greyColor, styles } from '../../theme';
 import { DetailContainer, TitleText } from './InvestmentScore';
 import { NameRow } from './TransactionPrice';
@@ -8,6 +9,7 @@ import RecData from '../../../mock/RecData.json';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import { LikeButton } from './Title';
 const Recommendation = () => {
+  const [rating, setRating] = useState(1);
   return (
     <DetailContainer>
       <NameRow>
@@ -29,7 +31,15 @@ const Recommendation = () => {
       />
       <RatingView>
         <BoldText>만족도를 입력해 주셔서 감사합니다</BoldText>
-        <View style={{ marginVertical: 10, alignItems: 'center' }}>
+        <AirbnbRating //
+          unSelectedColor={greyColor}
+          defaultRating={1}
+          onFinishRating={rate => setRating(rate)}
+          ratingContainerStyle={{ paddingTop: 5, height: 30 }}
+          reviews={[]}
+          size={30}
+        />
+        <View style={{ marginVertical: 30, alignItems: 'center' }}>
           <GreyText>계속 발전하는 추천 아파트 알고리즘에</GreyText>
           <GreyText>만족도가 바뀌셨다면 수정해주세요</GreyText>
         </View>
