@@ -25,6 +25,7 @@ const Carousel = ({ pages, pageWidth, gap, offset }) => {
         contentContainerStyle={{
           paddingHorizontal: offset + gap / 2,
         }}
+        bounces={false}
         data={pages}
         decelerationRate='fast'
         horizontal

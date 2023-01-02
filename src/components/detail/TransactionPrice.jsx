@@ -6,6 +6,7 @@ import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import { greyColor } from '../../theme';
 import { BlueText } from '../swiper/LoginSwiper';
 import CategoryBtn from './CategoryBtn';
+import { styles } from '../../theme';
 import { periodData, priceData } from '../../constant/CategoryBtn';
 
 const TransactionPrice = () => {
@@ -16,7 +17,6 @@ const TransactionPrice = () => {
       <NameRow>
         <TitleText>실거래가 정보</TitleText>
         <TitleToggle //
-          containerStyle={{ overflow: 'visible' }}
           style={styles.shadow}
           activeOpacity={1}>
           <Text style={{ fontSize: 13 }}>36평형</Text>
@@ -60,7 +60,7 @@ const TransactionPrice = () => {
   );
 };
 
-const NameRow = styled.View`
+export const NameRow = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -71,6 +71,7 @@ const TitleToggle = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   height: 25px;
   width: 85px;
   justify-content: center;
+  align-items: center;
   background-color: white;
   flex-direction: row;
   border-radius: 10px;
@@ -125,14 +126,4 @@ export const MoreText = styled.Text`
   font-size: 16px;
 `;
 
-const styles = StyleSheet.create({
-  shadow: {
-    shadowColor: 'black', // IOS
-    shadowOffset: { height: 1.4, width: 0 }, // IOS
-    shadowOpacity: 0.3, // IOS
-    shadowRadius: 2, //IOS
-    elevation: 5, // Android
-    alignItems: 'center',
-  },
-});
 export default TransactionPrice;

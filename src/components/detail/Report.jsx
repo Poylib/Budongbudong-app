@@ -2,14 +2,13 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Dimensions, FlatList, Text, View } from 'react-native';
 import styled from 'styled-components/native';
-import { blueColor } from '../../theme';
+import { blueColor, SCREEN_WIDTH } from '../../theme';
 import Carousel from './Carousel';
 import { DetailContainer, TitleText } from './InvestmentScore';
 import { HorizontalBorder, MoreButton, MoreText } from './TransactionPrice';
 import reportData from '../../../mock/reportData.json';
 const Report = () => {
   const navigation = useNavigation();
-  const screenWidth = Math.round(Dimensions.get('window').width);
   return (
     <DetailContainer>
       <TitleText>레포트로 보는 단지</TitleText>
@@ -23,7 +22,7 @@ const Report = () => {
         gap={12}
         offset={15}
         pages={reportData}
-        pageWidth={screenWidth - (12 + 15) * 2}
+        pageWidth={SCREEN_WIDTH - (12 + 15) * 2}
       />
       <HorizontalBorder />
       <MoreButton onPress={() => navigation.replace('Tabs', { screen: '레포트' })}>

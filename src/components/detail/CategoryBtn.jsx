@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
-import { greyColor } from '../../theme';
+import { greyColor, styles } from '../../theme';
 
 const CategoryBtn = ({ data, setFunc }) => {
   const { buttonStyle, dataSet } = data;
@@ -50,16 +50,5 @@ const TextToggle = styled.Text`
   font-size: ${({ size }) => `${size}px`}
   color: ${({ select }) => (select ? 'black' : 'grey')};
 `;
-
-const styles = StyleSheet.create({
-  shadow: {
-    shadowColor: 'black', // IOS
-    shadowOffset: { height: 1.4, width: 0 }, // IOS
-    shadowOpacity: 0.3, // IOS
-    shadowRadius: 2, //IOS
-    elevation: 8, // Android
-    backgroundColor: 'white',
-  },
-});
 
 export default CategoryBtn;

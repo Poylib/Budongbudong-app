@@ -99,7 +99,7 @@ const LightText = styled.Text`
   color: lightgrey;
   font-size: 15px;
 `;
-const LikeButton = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
+export const LikeButton = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   align-items: center;
   justify-content: center;
   border-radius: 50px;
