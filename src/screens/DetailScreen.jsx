@@ -14,8 +14,10 @@ import Title from '../components/detail/Title';
 import TransactionPrice from '../components/detail/TransactionPrice';
 import { DetailContainer } from '../components/detail/InvestmentScore';
 import { blueColor, greyColor } from '../theme';
+import { useNavigation } from '@react-navigation/native';
 
 const DetailScreen = () => {
+  const navigation = useNavigation();
   const [like, setLike] = useState(false);
   const activeLike = () => {
     setLike(!like);
@@ -39,11 +41,13 @@ const DetailScreen = () => {
         <ServiceText>혹시 아파트 정보가 수정이 필요하다면</ServiceText>
         <ServiceText>수정해주세요. 부동부동 서비스를</ServiceText>
         <ServiceText>함께 만들어가요!</ServiceText>
-        <TouchableOpacity activeOpacity={1}>
+        <TouchableOpacity //
+          onPress={() => navigation.navigate('DetailDeepStack', { screen: 'Contact' })}
+          activeOpacity={1}>
           <ContactText>정정 및 요청 문의하기 ></ContactText>
         </TouchableOpacity>
       </DetailContainer>
-      <DetailContainer>
+      <DetailContainer style={{ marginBottom: 50 }}>
         <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
           <BottomBtn onPress={activeLike}>
             <IconView>
@@ -55,7 +59,7 @@ const DetailScreen = () => {
             <BtnText style={{ color: blueColor }}>매물더보기+</BtnText>
           </BottomBtn>
         </View>
-        <PrescribeBtn>
+        <PrescribeBtn onPress={() => navigation.replace('Tabs', { screen: '처방전' })}>
           <BtnText style={{ color: 'white' }}>이 단지로 처방 받기</BtnText>
         </PrescribeBtn>
       </DetailContainer>

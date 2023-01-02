@@ -5,6 +5,7 @@ import BottomTabs from './BottomTabs';
 import DetailStack from './DetailStack';
 import LoginScreen from '../screens/LoginScreen';
 import SplashScreen from '../screens/SplashScreen';
+import DetailDeepStack from './DetailDeepStack';
 
 const Root = () => {
   const RootNav = createNativeStackNavigator();
@@ -32,6 +33,15 @@ const Root = () => {
           headerBackTitleVisible: false,
           headerTintColor: 'black',
           title: '상세정보',
+        }}
+      />
+      <RootNav.Screen //
+        name='DetailDeepStack'
+        component={DetailDeepStack}
+        options={{
+          headerBackTitleVisible: false,
+          headerTitleAlign: 'left',
+          title: '무슨 학교',
         }}
       />
     </RootNav.Navigator>

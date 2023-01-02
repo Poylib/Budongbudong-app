@@ -88,7 +88,7 @@ const AverageView = styled.View`
   align-items: center;
 `;
 
-const HorizontalBorder = styled.View`
+export const HorizontalBorder = styled.View`
   position: static;
   left: -20px;
   width: 110%;
@@ -116,7 +116,7 @@ const TradeRow = styled.View`
   padding: 0 20px;
   justify-content: space-between;
 `;
-const MoreButton = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
+export const MoreButton = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   height: 60px;
   align-items: center;
   justify-content: center;
