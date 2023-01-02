@@ -5,7 +5,7 @@ import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 import { blueColor, greyColor } from '../../theme';
 
-const Title = () => {
+const Title = ({ activeLike, like }) => {
   const navigation = useNavigation();
   const goDetail = () => {
     navigation.push('Stack', { screen: 'Detail' });
@@ -37,8 +37,8 @@ const Title = () => {
           </TouchableOpacity>
         </TextBox>
       </Ranking>
-      <LikeButton>
-        <AntDesign name={'heart'} size={18} color={'lightgrey'} />
+      <LikeButton onPress={activeLike}>
+        <AntDesign name={'heart'} size={18} color={like ? blueColor : 'lightgrey'} />
       </LikeButton>
     </TitleContainer>
   );
@@ -99,7 +99,7 @@ const LightText = styled.Text`
   color: lightgrey;
   font-size: 15px;
 `;
-const LikeButton = styled.TouchableOpacity`
+const LikeButton = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   align-items: center;
   justify-content: center;
   border-radius: 50px;

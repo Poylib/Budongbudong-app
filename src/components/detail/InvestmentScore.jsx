@@ -47,7 +47,7 @@ const InvestmentScore = () => {
 };
 export const DetailContainer = styled.View`
   width: 100%;
-  padding: 25px 15px;
+  padding: 25px 15px 15px 15px;
   margin-bottom: 15px;
   background-color: white;
 `;
@@ -59,6 +59,7 @@ export const TitleText = styled.Text`
 
 const ContentColumn = styled.View`
   margin-top: 20px;
+  margin-bottom: 30px;
 `;
 const ContentRow = styled.View`
   flex-direction: row;

@@ -11,7 +11,6 @@ import { periodData, priceData } from '../../constant/CategoryBtn';
 const TransactionPrice = () => {
   const [pickKind, setPickKind] = useState(priceData.dataSet[0].title);
   const [pickPeriod, setpickPeriod] = useState(periodData.dataSet[0].title);
-  console.log(pickPeriod);
   return (
     <DetailContainer>
       <NameRow>
@@ -43,7 +42,20 @@ const TransactionPrice = () => {
           data={periodData}
           setFunc={setpickPeriod}
         />
+        <GraphSection>
+          <Text>Graph</Text>
+        </GraphSection>
+        <TradeTitleRow>
+          <Text>계약일</Text>
+          <Text>가격</Text>
+          <Text>타입</Text>
+          <Text>층</Text>
+        </TradeTitleRow>
       </PeriodCategory>
+      <HorizontalBorder />
+      <MoreButton>
+        <Text>실거래가 더보기 +</Text>
+      </MoreButton>
     </DetailContainer>
   );
 };
@@ -84,7 +96,32 @@ const HorizontalBorder = styled.View`
   background-color: ${greyColor};
 `;
 
-const PeriodCategory = styled.View``;
+const PeriodCategory = styled.View`
+  margin: 20px 0;
+`;
+const GraphSection = styled.View`
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  height: 300px;
+`;
+
+const TradeTitleRow = styled.View`
+  padding: 0 30px;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+const TradeRow = styled.View`
+  flex-direction: row;
+  padding: 0 20px;
+  justify-content: space-between;
+`;
+const MoreButton = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+`;
 
 const styles = StyleSheet.create({
   shadow: {
