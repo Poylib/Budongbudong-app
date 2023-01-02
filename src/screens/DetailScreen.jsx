@@ -42,7 +42,7 @@ const DetailScreen = () => {
         <ServiceText>수정해주세요. 부동부동 서비스를</ServiceText>
         <ServiceText>함께 만들어가요!</ServiceText>
         <TouchableOpacity //
-          onPress={() => navigation.navigate('DetailDeepStack', { screen: 'Contact' })}
+          onPress={() => navigation.navigate('Contact')}
           activeOpacity={1}>
           <ContactText>정정 및 요청 문의하기 ></ContactText>
         </TouchableOpacity>

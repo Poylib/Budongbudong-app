@@ -54,7 +54,7 @@ const TransactionPrice = () => {
       </PeriodCategory>
       <HorizontalBorder />
       <MoreButton>
-        <Text>실거래가 더보기 +</Text>
+        <MoreText>실거래가 더보기 +</MoreText>
       </MoreButton>
     </DetailContainer>
   );
@@ -120,7 +120,9 @@ export const MoreButton = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   height: 60px;
   align-items: center;
   justify-content: center;
-  /* background-color: red; */
+`;
+export const MoreText = styled.Text`
+  font-size: 16px;
 `;
 
 const styles = StyleSheet.create({
