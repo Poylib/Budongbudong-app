@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/native';
 import { TouchableOpacity, View } from 'react-native';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
@@ -19,11 +19,21 @@ import { useNavigation } from '@react-navigation/native';
 const DetailScreen = () => {
   const navigation = useNavigation();
   const [like, setLike] = useState(false);
+
+  const [scrollToY, setScrollToY] = useState(0);
+  const [ref, setRef] = useState();
+
   const activeLike = () => {
     setLike(!like);
   };
+  const handleScroll = event => {
+    ref.scrollTo({ y: scrollToY, animated: true });
+  };
   return (
     <DetailScreenContainer //
+      ref={ref => {
+        setRef(ref);
+      }}
       bounces={false}>
       <Title //
         activeLike={activeLike}
@@ -31,6 +41,12 @@ const DetailScreen = () => {
       />
       <InvestmentScore />
       <TransactionPrice />
+      <View
+        onLayout={e => {
+          const layout = e.nativeEvent.layout;
+          setScrollToY(layout.y);
+        }}
+      />
       <SaleInformation />
       <Prediction />
       <InformationField />
@@ -55,7 +71,7 @@ const DetailScreen = () => {
             </IconView>
             <BtnText style={{ color: like ? blueColor : 'grey' }}>찜하기</BtnText>
           </BottomBtn>
-          <BottomBtn>
+          <BottomBtn onPress={() => handleScroll()}>
             <BtnText style={{ color: blueColor }}>매물더보기+</BtnText>
           </BottomBtn>
         </View>

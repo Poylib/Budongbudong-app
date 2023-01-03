@@ -7,7 +7,7 @@ import { greyColor, SCREEN_HEIGHT, blueColor } from '../theme';
 
 const FixedHeader = () => {
   const sortName = ['수익순', '가격순', '인기순'];
-  const [sort, setSort] = useState();
+  const [sort, setSort] = useState('');
   const sortFunc = e => {
     setSort(e);
   };
@@ -27,17 +27,15 @@ const FixedHeader = () => {
         <Sort>
           {sortName.map((name, idx) => {
             return (
-              <>
-                <SortTouch //
-                  key={name}
-                  onPress={() => sortFunc(name)}>
-                  <SortingText //
-                    select={sort === name ? 1 : 0}>
-                    {name}
-                  </SortingText>
-                </SortTouch>
+              <SortTouch //
+                key={name}
+                onPress={() => sortFunc(name)}>
+                <SortingText //
+                  select={sort === name ? 1 : 0}>
+                  {name}
+                </SortingText>
                 {idx !== 2 && <Line bold={false} />}
-              </>
+              </SortTouch>
             );
           })}
         </Sort>
@@ -86,6 +84,7 @@ const Sort = styled.View`
 `;
 
 const SortTouch = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
+  flex-direction: row;
   height: 100%;
 `;
 

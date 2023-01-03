@@ -7,7 +7,7 @@ import { greyColor } from '../../theme';
 import { BlueText } from '../swiper/LoginSwiper';
 import CategoryBtn from './CategoryBtn';
 import { styles } from '../../theme';
-import { periodData, priceData } from '../../constant/CategoryBtn';
+import { periodData, priceData } from '../../constant';
 
 const TransactionPrice = () => {
   const [pickKind, setPickKind] = useState(priceData.dataSet[0].title);
