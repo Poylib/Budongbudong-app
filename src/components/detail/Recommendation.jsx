@@ -33,7 +33,7 @@ const Recommendation = () => {
         <BoldText>만족도를 입력해 주셔서 감사합니다</BoldText>
         <AirbnbRating //
           unSelectedColor={greyColor}
-          defaultRating={1}
+          defaultRating={5}
           onFinishRating={rate => setRating(rate)}
           ratingContainerStyle={{ paddingTop: 5, height: 30 }}
           reviews={[]}

@@ -4,6 +4,11 @@ import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import { blueColor, greyColor, redColor } from '../../theme';
 
 const PriceGraph = ({ item }) => {
+  const priceConversion = num => {
+    let str = String(Math.floor((num / 100000000) * 10) / 10);
+
+    return str.length < 3 ? `${str}.0 억` : `${str} 억`;
+  };
   return (
     <StyledPriceGraph>
       <StyledTitleBox>
@@ -31,12 +36,12 @@ const PriceGraph = ({ item }) => {
           <TextRow>
             <PriceKind>매매가</PriceKind>
             <Line bold={false} />
-            <PriceText>{item.price} 억</PriceText>
+            <PriceText>{priceConversion(item.price)}</PriceText>
           </TextRow>
           <TextRow>
             <PriceKind>전세가</PriceKind>
             <Line bold={false} />
-            <PriceText>{item.leasePrice} 억</PriceText>
+            <PriceText>{priceConversion(item.leasePrice)}</PriceText>
           </TextRow>
         </Price>
         <Graph source={require('../../../assets/images/graph.jpg')} />

@@ -1,40 +1,50 @@
-import React from 'react';
-import { Dimensions } from 'react-native';
+import React, { useState } from 'react';
 import styled from 'styled-components/native';
 import { Line } from './search/PriceGraph';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
-import { greyColor } from '../theme';
+import { greyColor, SCREEN_HEIGHT, blueColor } from '../theme';
 
-const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 const FixedHeader = () => {
+  const sortName = ['수익순', '가격순', '인기순'];
+  const [sort, setSort] = useState();
+  const sortFunc = e => {
+    setSort(e);
+  };
   return (
     <HeaderContainer>
-      <SearchBar //
-        placeholder='검색어를 입력해 주세요. [지역, 집 이름, 가격]'
-        returnKeyType='search'
-      />
+      <SearchBar>
+        <Search //
+          placeholder='검색어를 입력해 주세요. [지역, 집 이름, 가격]'
+          returnKeyType='search'
+        />
+        <SearchIcon>
+          <Ionicons name={'md-search-outline'} color={'grey'} size={25} />
+        </SearchIcon>
+      </SearchBar>
+
       <SortFilterBar>
         <Sort>
-          <SortTouch activeOpacity={1}>
-            <SortingText>수익순</SortingText>
-          </SortTouch>
-          <Line bold={false} />
-          <SortTouch activeOpacity={1}>
-            <SortingText>가격순</SortingText>
-          </SortTouch>
-          <Line bold={false} />
-          <SortTouch activeOpacity={1}>
-            <SortingText>인기순</SortingText>
-          </SortTouch>
+          {sortName.map((name, idx) => {
+            return (
+              <>
+                <SortTouch //
+                  key={name}
+                  onPress={() => sortFunc(name)}>
+                  <SortingText //
+                    select={sort === name ? 1 : 0}>
+                    {name}
+                  </SortingText>
+                </SortTouch>
+                {idx !== 2 && <Line bold={false} />}
+              </>
+            );
+          })}
         </Sort>
         <Filter activeOpacity={1}>
           <AntDesign name={'filter'} color={'grey'} size={20} />
         </Filter>
       </SortFilterBar>
-      <SearchIcon>
-        <Ionicons name={'md-search-outline'} color={'grey'} size={25} />
-      </SearchIcon>
     </HeaderContainer>
   );
 };
@@ -49,7 +59,12 @@ const HeaderContainer = styled.View`
   justify-content: space-between;
 `;
 
-const SearchBar = styled.TextInput`
+const SearchBar = styled.View`
+  align-items: center;
+  width: 100%;
+`;
+
+const Search = styled.TextInput`
   padding: 12px;
   margin: 0 10px;
   width: 90%;
@@ -70,13 +85,13 @@ const Sort = styled.View`
   height: 17px;
 `;
 
-const SortTouch = styled.TouchableOpacity`
+const SortTouch = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   height: 100%;
 `;
 
 const SortingText = styled.Text`
   font-size: 12px;
-  color: grey;
+  color: ${({ select }) => (select ? blueColor : 'grey')};
 `;
 
 const Filter = styled.TouchableOpacity`
@@ -84,7 +99,7 @@ const Filter = styled.TouchableOpacity`
 `;
 
 const SearchIcon = styled.View`
-  top: 23%;
+  top: 18%;
   right: 8%;
   position: absolute;
 `;

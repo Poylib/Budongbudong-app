@@ -1,0 +1,147 @@
+[
+  {
+    "id": 1,
+    "text": "오산원동힐스테이트",
+    "price": 400000000,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 280000000,
+    "profit": 3,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 2,
+    "text": "우림",
+    "price": 190000000,
+    "squareMeter": "73㎡(22평)",
+    "leasePrice": 150000000,
+    "profit": -13,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 3,
+    "text": "갈곶피오레",
+    "price": 360000000,
+    "squareMeter": "120㎡(36평)",
+    "leasePrice": 290000000,
+    "profit": -12,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 4,
+    "text": "원동두산,동아",
+    "price": 360000000,
+    "squareMeter": "110㎡(33평)",
+    "leasePrice": 200000000,
+    "profit": 5,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 5,
+    "text": "오산대동다숲",
+    "price": 210000000,
+    "squareMeter": "83㎡(25평)",
+    "leasePrice": 170000000,
+    "profit": -7,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 6,
+    "text": "거성",
+    "price": 420000000,
+    "squareMeter": "85㎡(26평)",
+    "leasePrice": 360000000,
+    "profit": -4,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 7,
+    "text": "성옥",
+    "price": 180000000,
+    "squareMeter": "93㎡(28평)",
+    "leasePrice": 100000000,
+    "profit": 0,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 8,
+    "text": "대진",
+    "price": 350000000,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 270000000,
+    "profit": 9,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 9,
+    "text": "무지개",
+    "price": 170000000,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 100000000,
+    "profit": -5,
+    "graph": "assets/images/graph.jpg"
+  },
+
+  {
+    "id": 10,
+    "text": "장미6차",
+    "price": 170000000,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 90000000,
+    "profit": 11,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 11,
+    "text": "수청삼익",
+    "price": 320000000,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 200000000,
+    "profit": -3,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 12,
+    "text": "일신가든",
+    "price": 120000000,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 40000000,
+    "profit": -5,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 13,
+    "text": "세창리베하우스",
+    "price": 200000000,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 100000000,
+    "profit": 1,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 14,
+    "text": "영산그린맨션",
+    "price": 160000000,
+    "squareMeter": "71㎡(21평)",
+    "leasePrice": 100000000,
+    "profit": 1,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 15,
+    "text": "우주마루",
+    "price": 280000000,
+    "squareMeter": "65㎡(20평)",
+    "leasePrice": 210000000,
+    "profit": -12,
+    "graph": "assets/images/graph.jpg"
+  },
+  {
+    "id": 16,
+    "text": "어반휴플러스",
+    "price": 130000000,
+    "squareMeter": "118㎡(36평)",
+    "leasePrice": 140000000,
+    "profit": -9,
+    "graph": "assets/images/graph.jpg"
+  }
+]
