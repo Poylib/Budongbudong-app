@@ -6,7 +6,9 @@
     "squareMeter": "118㎡(36평)",
     "leasePrice": 280000000,
     "profit": 3,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": null,
+    "like": 20
   },
   {
     "id": 2,
@@ -15,7 +17,9 @@
     "squareMeter": "73㎡(22평)",
     "leasePrice": 150000000,
     "profit": -13,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": null,
+    "like": 10
   },
   {
     "id": 3,
@@ -24,7 +28,9 @@
     "squareMeter": "120㎡(36평)",
     "leasePrice": 290000000,
     "profit": -12,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg",
+    "like": 7
   },
   {
     "id": 4,
@@ -33,7 +39,9 @@
     "squareMeter": "110㎡(33평)",
     "leasePrice": 200000000,
     "profit": 5,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg",
+    "like": 2
   },
   {
     "id": 5,
@@ -42,7 +50,9 @@
     "squareMeter": "83㎡(25평)",
     "leasePrice": 170000000,
     "profit": -7,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg",
+    "like": 21
   },
   {
     "id": 6,
@@ -51,7 +61,9 @@
     "squareMeter": "85㎡(26평)",
     "leasePrice": 360000000,
     "profit": -4,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": null,
+    "like": 3
   },
   {
     "id": 7,
@@ -60,7 +72,9 @@
     "squareMeter": "93㎡(28평)",
     "leasePrice": 100000000,
     "profit": 0,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg",
+    "like": 6
   },
   {
     "id": 8,
@@ -69,7 +83,9 @@
     "squareMeter": "118㎡(36평)",
     "leasePrice": 270000000,
     "profit": 9,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg",
+    "like": 8
   },
   {
     "id": 9,
@@ -78,7 +94,9 @@
     "squareMeter": "118㎡(36평)",
     "leasePrice": 100000000,
     "profit": -5,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": null,
+    "like": 1
   },
 
   {
@@ -88,7 +106,9 @@
     "squareMeter": "118㎡(36평)",
     "leasePrice": 90000000,
     "profit": 11,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": "https://cdn.pixabay.com/photo/2017/06/22/17/51/window-2431825__480.jpg",
+    "like": 9
   },
   {
     "id": 11,
@@ -97,7 +117,9 @@
     "squareMeter": "118㎡(36평)",
     "leasePrice": 200000000,
     "profit": -3,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg",
+    "like": 16
   },
   {
     "id": 12,
@@ -106,7 +128,9 @@
     "squareMeter": "118㎡(36평)",
     "leasePrice": 40000000,
     "profit": -5,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": "https://cdn.pixabay.com/photo/2016/06/24/19/27/construction-site-1477687__480.jpg",
+    "like": 11
   },
   {
     "id": 13,
@@ -115,7 +139,9 @@
     "squareMeter": "118㎡(36평)",
     "leasePrice": 100000000,
     "profit": 1,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": null,
+    "like": 0
   },
   {
     "id": 14,
@@ -124,7 +150,9 @@
     "squareMeter": "71㎡(21평)",
     "leasePrice": 100000000,
     "profit": 1,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": null,
+    "like": 17
   },
   {
     "id": 15,
@@ -133,7 +161,9 @@
     "squareMeter": "65㎡(20평)",
     "leasePrice": 210000000,
     "profit": -12,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": "https://cdn.pixabay.com/photo/2017/10/17/19/11/fantasy-2861815__480.jpg",
+    "like": 18
   },
   {
     "id": 16,
@@ -142,6 +172,8 @@
     "squareMeter": "118㎡(36평)",
     "leasePrice": 140000000,
     "profit": -9,
-    "graph": "assets/images/graph.jpg"
+    "graph": "assets/images/graph.jpg",
+    "img": "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg",
+    "like": 6
   }
 ]

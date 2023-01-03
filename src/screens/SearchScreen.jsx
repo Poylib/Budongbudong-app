@@ -7,17 +7,20 @@ import SearchData from '../../mock/SearchData.json';
 import { greyColor } from '../theme';
 
 const SearchScreen = () => {
+  const [sort, setSort] = useState('');
   const [flatData, setFlatDat] = useState(SearchData);
-  useEffect(() => {}, [flatData]);
+  useEffect(() => {
+    console.log(sort);
+  }, [sort]);
   return (
     <>
       <SafeAreaView style={{ backgroundColor: 'white', borderBottomColor: greyColor, borderBottomWidth: 1 }} edges={['top']}>
-        <FixedHeader />
+        <FixedHeader sort={sort} setSort={setSort} />
       </SafeAreaView>
       <FlatList //
-        data={flatData}
+        data={SearchData}
         renderItem={({ item }) => <Card item={item} />}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={item => item.id}
         bounces={false}
       />
     </>

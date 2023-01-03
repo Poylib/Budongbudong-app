@@ -26,7 +26,7 @@ const DetailScreen = () => {
   const activeLike = () => {
     setLike(!like);
   };
-  const handleScroll = event => {
+  const handleScroll = () => {
     ref.scrollTo({ y: scrollToY, animated: true });
   };
   return (
@@ -71,7 +71,7 @@ const DetailScreen = () => {
             </IconView>
             <BtnText style={{ color: like ? blueColor : 'grey' }}>찜하기</BtnText>
           </BottomBtn>
-          <BottomBtn onPress={() => handleScroll()}>
+          <BottomBtn onPress={handleScroll}>
             <BtnText style={{ color: blueColor }}>매물더보기+</BtnText>
           </BottomBtn>
         </View>

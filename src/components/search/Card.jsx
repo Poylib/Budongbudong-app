@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 import { useNavigation } from '@react-navigation/native';
 import { greyColor, backGroundColor } from '../../theme';
 import PriceGraph from './PriceGraph';
+import { imgArr } from '../../constant/buildingImg';
 
 const Card = ({ item }) => {
   const navigation = useNavigation();
@@ -17,7 +18,14 @@ const Card = ({ item }) => {
       <Content>
         <PriceGraph item={item} />
         <ImegeSection>
-          <Img source={{ uri: 'https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg' }} />
+          {item.img !== null ? (
+            <Img source={{ uri: item.img }} />
+          ) : (
+            <Img //
+              style={{ width: 60, height: 75 }}
+              source={imgArr[item.id % 3]}
+            />
+          )}
         </ImegeSection>
       </Content>
     </SearchListContainer>
@@ -52,14 +60,16 @@ const StyledText = styled.Text`
 `;
 
 const Img = styled.Image`
-  width: 100%;
-  height: 100%;
+  width: 85px;
+  height: 85px;
   border-radius: 10px;
 `;
 
 const ImegeSection = styled.View`
   border: 0.5px solid lightgray;
   border-radius: 10px;
+  align-items: center;
+  justify-content: center;
   width: 85px;
   height: 85px;
 `;

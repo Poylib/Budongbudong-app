@@ -5,11 +5,10 @@ import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import { greyColor, SCREEN_HEIGHT, blueColor } from '../theme';
 
-const FixedHeader = () => {
+const FixedHeader = ({ sort, setSort }) => {
   const sortName = ['수익순', '가격순', '인기순'];
-  const [sort, setSort] = useState('');
-  const sortFunc = e => {
-    setSort(e);
+  const sortFunc = sortName => {
+    setSort(sortName);
   };
   return (
     <HeaderContainer>
@@ -89,7 +88,7 @@ const SortTouch = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
 `;
 
 const SortingText = styled.Text`
-  font-size: 12px;
+  font-size: 13px;
   color: ${({ select }) => (select ? blueColor : 'grey')};
 `;
 
