@@ -7,9 +7,9 @@ import { greyColor, SCREEN_HEIGHT, blueColor } from '../theme';
 
 const FixedHeader = ({ sort, setSort }) => {
   const sortName = ['수익순', '가격순', '인기순'];
-  const sortFunc = sortName => {
-    setSort(sortName);
-  };
+  // const sortFunc = sortName => {
+  //   setSort(sortName);
+  // };
   return (
     <HeaderContainer>
       <SearchBar>
@@ -28,7 +28,7 @@ const FixedHeader = ({ sort, setSort }) => {
             return (
               <SortTouch //
                 key={name}
-                onPress={() => sortFunc(name)}>
+                onPress={() => setSort(name)}>
                 <SortingText //
                   select={sort === name ? 1 : 0}>
                   {name}

@@ -8,9 +8,20 @@ import { greyColor } from '../theme';
 
 const SearchScreen = () => {
   const [sort, setSort] = useState('');
-  const [flatData, setFlatDat] = useState(SearchData);
+  const [flatData, setFlatData] = useState(SearchData);
   useEffect(() => {
-    console.log(sort);
+    if (sort === '수익순') {
+      let arr = flatData.sort((a, b) => a.profit - b.profit);
+      setFlatData([...arr]);
+    } else if (sort === '가격순') {
+      let arr = flatData.sort((a, b) => a.price - b.price);
+      setFlatData([...arr]);
+    } else if (sort === '인기순') {
+      let arr = flatData.sort((a, b) => a.like - b.like);
+      setFlatData([...arr]);
+    } else {
+      console.log('error');
+    }
   }, [sort]);
   return (
     <>
@@ -18,10 +29,11 @@ const SearchScreen = () => {
         <FixedHeader sort={sort} setSort={setSort} />
       </SafeAreaView>
       <FlatList //
-        data={SearchData}
+        data={flatData}
         renderItem={({ item }) => <Card item={item} />}
         keyExtractor={item => item.id}
         bounces={false}
+        extraData={sort}
       />
     </>
   );
