@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/native';
 import { TouchableOpacity, View } from 'react-native';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
-
 import BasicInformation from '../components/detail/BasicInformation';
 import InformationField from '../components/detail/InformationField';
 import InvestmentScore from '../components/detail/InvestmentScore';
@@ -18,6 +17,7 @@ import { useNavigation } from '@react-navigation/native';
 import detailArr from '../../mock/detailData.json';
 
 const DetailScreen = ({ route }) => {
+  console.log(route.params);
   const { text } = route.params;
   const navigation = useNavigation();
   const [like, setLike] = useState(false);

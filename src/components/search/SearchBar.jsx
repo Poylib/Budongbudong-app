@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import React, { useRef, useState } from 'react';
+import { Keyboard } from 'react-native';
 
 const SearchBar = ({
   //
@@ -31,7 +32,7 @@ const SearchBar = ({
         autoCorrect={false}
         clearTextOnFocus={true}
         onChangeText={onChangeText}
-        onPressIn={() => setModal(true)}
+        onFocus={() => setModal(true)}
         onSubmitEditing={SearchActive}
       />
       <SearchIcon onPress={SearchActive}>

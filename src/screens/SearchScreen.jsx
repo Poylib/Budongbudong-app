@@ -6,7 +6,7 @@ import FixedHeader from '../components/Header';
 import Card from '../components/search/Card';
 import styled from 'styled-components/native';
 import SearchData from '../../mock/SearchData.json';
-import { greyColor, SCREEN_WIDTH } from '../theme';
+import { backGroundColor, greyColor, SCREEN_WIDTH } from '../theme';
 import SearchBar from '../components/search/SearchBar';
 
 const SearchScreen = () => {
@@ -40,12 +40,12 @@ const SearchScreen = () => {
         setSearchList([]);
         setSearchEmpty(true);
       }
-    } else setSearchList([]);
+    } else setSearchList(SearchData);
   }, [query]);
 
   return (
     <>
-      <SafeAreaView style={{ backgroundColor: 'white', borderBottomColor: greyColor, borderBottomWidth: 1 }} edges={['top']}>
+      <SafeAreaView style={{ backgroundColor: 'white', paddingBottom: 79 }} edges={['top', 'bottom']}>
         <SearchBar //
           query={query}
           setQuery={setQuery}
@@ -54,8 +54,9 @@ const SearchScreen = () => {
           setFlatData={setFlatData}
         />
         <FixedHeader sort={sort} setSort={setSort} />
+
         <FlatList //
-          style={{ height: '100%' }}
+          style={{ height: '100%', backgroundColor: backGroundColor }}
           data={flatData}
           renderItem={({ item }) => <Card item={item} />}
           keyExtractor={item => item.id}
@@ -64,18 +65,20 @@ const SearchScreen = () => {
         />
         {modal && (
           <Modal>
-            <SearchView>
-              {searchList.map(search => {
-                return (
-                  <SearchRow key={search.id}>
-                    <IconBox>
-                      <Ionicons name={'map-outline'} size={15} color={'white'} />
-                    </IconBox>
-                    <SearchText>{search.text}</SearchText>
-                  </SearchRow>
-                );
-              })}
-            </SearchView>
+            {query && (
+              <SearchView>
+                {searchList.map(search => {
+                  return (
+                    <SearchRow key={search.id}>
+                      <IconBox>
+                        <Ionicons name={'map-outline'} size={15} color={'white'} />
+                      </IconBox>
+                      <SearchText>{search.text}</SearchText>
+                    </SearchRow>
+                  );
+                })}
+              </SearchView>
+            )}
             <TouchableOpacity //
               onPress={() => {
                 Keyboard.dismiss();
@@ -91,7 +94,7 @@ const SearchScreen = () => {
 };
 
 const Modal = styled.View`
-  height: 93%;
+  height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 1;

@@ -6,10 +6,9 @@ import { useNavigation } from '@react-navigation/native';
 import { blueColor, greyColor } from '../../theme';
 
 const Title = ({ activeLike, like, otherRank, data }) => {
-  // console.log(otherRank);
   const navigation = useNavigation();
-  const goDetail = () => {
-    navigation.push('Stack', { screen: 'Detail' });
+  const goDetail = text => {
+    navigation.push('Stack', { screen: 'Detail', params: { text } });
   };
   return (
     data && (
@@ -30,14 +29,14 @@ const Title = ({ activeLike, like, otherRank, data }) => {
         </RankBox>
         <TextBox>
           {otherRank[0].rank !== 0 && (
-            <TouchableOpacity onPress={goDetail}>
+            <RankBtn onPress={() => goDetail(otherRank[0].name)}>
               <LightText>{otherRank[0].name}</LightText>
-            </TouchableOpacity>
+            </RankBtn>
           )}
           <BoldText>{data.name}</BoldText>
-          <TouchableOpacity>
+          <RankBtn onPress={() => goDetail(otherRank[0].name)}>
             <LightText>{otherRank[1].name}</LightText>
-          </TouchableOpacity>
+          </RankBtn>
         </TextBox>
         <LikeButton onPress={activeLike}>
           <AntDesign name={'heart'} size={18} color={like ? blueColor : 'lightgrey'} />
@@ -93,6 +92,8 @@ const TextBox = styled.View`
   width: 60%;
   justify-content: center;
 `;
+
+const RankBtn = styled.TouchableOpacity.attrs({ activeOpacity: 1 })``;
 
 const LightText = styled.Text`
   color: lightgrey;

@@ -74,7 +74,7 @@ const ItemSmallName = styled.Text`
 
 const StyledPriceBox = styled.View`
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   margin: 5px;
   width: 100%;
@@ -121,7 +121,7 @@ const PriceText = styled.Text`
 const Graph = styled.Image`
   flex: 1;
   margin: 0 6px;
-  height: 70px;
+  height: 65px;
 `;
 
 export default PriceGraph;

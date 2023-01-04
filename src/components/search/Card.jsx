@@ -34,7 +34,8 @@ const Card = ({ item }) => {
 };
 
 const SearchListContainer = styled.TouchableOpacity`
-  padding: 14px;
+  justify-content: center;
+  padding: 0 15px;
   width: 100%;
   height: 140px;
   background-color: ${backGroundColor};
@@ -44,7 +45,7 @@ const Content = styled.View`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  height: 125px;
+  height: 120px;
   padding: 20px 25px;
   border-radius: 7px;
   background-color: white;
@@ -61,8 +62,8 @@ const StyledText = styled.Text`
 `;
 
 const Img = styled.Image`
-  width: 85px;
-  height: 85px;
+  width: 80px;
+  height: 80px;
   border-radius: 10px;
 `;
 
@@ -71,8 +72,8 @@ const ImegeSection = styled.View`
   border-radius: 10px;
   align-items: center;
   justify-content: center;
-  width: 85px;
-  height: 85px;
+  width: 80px;
+  height: 80px;
 `;
 
 export default Card;
