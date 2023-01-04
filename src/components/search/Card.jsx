@@ -44,7 +44,7 @@ const Content = styled.View`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  height: 400px;
+  height: 125px;
   padding: 20px 25px;
   border-radius: 7px;
   background-color: white;

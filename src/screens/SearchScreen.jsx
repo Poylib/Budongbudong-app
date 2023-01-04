@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FlatList, Text, View } from 'react-native';
+import { FlatList, Keyboard, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import FixedHeader from '../components/Header';
@@ -76,6 +76,13 @@ const SearchScreen = () => {
                 );
               })}
             </SearchView>
+            <TouchableOpacity //
+              onPress={() => {
+                Keyboard.dismiss();
+                setModal(false);
+              }}
+              style={{ flex: 2.4 }}
+            />
           </Modal>
         )}
       </SafeAreaView>
@@ -93,7 +100,7 @@ const Modal = styled.View`
 `;
 
 const SearchView = styled.View`
-  height: 330px;
+  flex: 2;
   padding: 0 22px;
   width: 100%;
   background-color: white;
