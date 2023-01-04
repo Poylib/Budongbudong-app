@@ -11,7 +11,6 @@ const InvestmentScore = () => {
     if (num >= 100000000) return `${String(Math.ceil((num / 100000000) * 10) / 10)}억`;
     else return `${String(Math.ceil((num / 10000000) * 10) / 10)}천만`;
   };
-  // console.log(conversion(55000000));
   const arr = [
     {
       id: 1,
@@ -34,7 +33,6 @@ const InvestmentScore = () => {
       top: '68%',
     },
   ];
-  console.log(typeof arr[0].value === 'string');
   return (
     <DetailContainer>
       <TitleText>투자 항목 점수</TitleText>

@@ -5,16 +5,17 @@ import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 import { blueColor, greyColor } from '../../theme';
 
-const Title = ({ activeLike, like }) => {
+const Title = ({ activeLike, like, otherRank, data }) => {
+  console.log(otherRank);
   const navigation = useNavigation();
   const goDetail = () => {
     navigation.push('Stack', { screen: 'Detail' });
   };
   return (
-    <TitleContainer>
-      <Ranking>
+    data && (
+      <TitleContainer>
         <RankBox>
-          <SmallRanking>5위</SmallRanking>
+          <SmallRanking>{otherRank[0].rank}위</SmallRanking>
           <BigRankig>
             <View>
               <Ionicons name={'stats-chart'} color={'white'} size={23} />
@@ -22,25 +23,27 @@ const Title = ({ activeLike, like }) => {
             </View>
             <View style={{ paddingLeft: 7, alignItems: 'center' }}>
               <Text style={{ fontSize: 12, color: 'white' }}>순위</Text>
-              <Text style={{ fontSize: 14, fontWeight: 'bold', color: 'white' }}>7위</Text>
+              <Text style={{ fontSize: 14, fontWeight: 'bold', color: 'white' }}>{data.rank}위</Text>
             </View>
           </BigRankig>
-          <SmallRanking>7위</SmallRanking>
+          <SmallRanking>{otherRank[1].rank}위</SmallRanking>
         </RankBox>
         <TextBox>
-          <TouchableOpacity onPress={goDetail}>
-            <LightText>반포센트럴자이</LightText>
-          </TouchableOpacity>
-          <BoldText>반포자이</BoldText>
+          {otherRank[0].rank !== 0 && (
+            <TouchableOpacity onPress={goDetail}>
+              <LightText>{otherRank[0].name}</LightText>
+            </TouchableOpacity>
+          )}
+          <BoldText>{data.name}</BoldText>
           <TouchableOpacity>
-            <LightText>래미안신반포팰리스</LightText>
+            <LightText>{otherRank[1].name}</LightText>
           </TouchableOpacity>
         </TextBox>
-      </Ranking>
-      <LikeButton onPress={activeLike}>
-        <AntDesign name={'heart'} size={18} color={like ? blueColor : 'lightgrey'} />
-      </LikeButton>
-    </TitleContainer>
+        <LikeButton onPress={activeLike}>
+          <AntDesign name={'heart'} size={18} color={like ? blueColor : 'lightgrey'} />
+        </LikeButton>
+      </TitleContainer>
+    )
   );
 };
 
@@ -54,11 +57,6 @@ const TitleContainer = styled.View`
   background-color: white;
 `;
 
-const Ranking = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  width: 60%;
-`;
 const SmallRanking = styled.Text`
   margin: 2px 0;
   font-size: 11px;
@@ -66,12 +64,13 @@ const SmallRanking = styled.Text`
 `;
 const RankBox = styled.View`
   width: 80px;
+  margin-right: 10px;
   justify-content: center;
   align-items: center;
 `;
 
 const BigRankig = styled.View`
-  width: 95%;
+  width: 100%;
   height: 40px;
   margin: 0 auto;
   border-radius: 5px;
@@ -91,7 +90,7 @@ const Hline = styled.View`
   background-color: white;
 `;
 const TextBox = styled.View`
-  /* width: 70%; */
+  width: 60%;
   justify-content: center;
 `;
 

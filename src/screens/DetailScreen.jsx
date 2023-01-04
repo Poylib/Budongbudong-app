@@ -15,15 +15,29 @@ import TransactionPrice from '../components/detail/TransactionPrice';
 import { DetailContainer } from '../components/detail/InvestmentScore';
 import { blueColor, greyColor } from '../theme';
 import { useNavigation } from '@react-navigation/native';
+import detailArr from '../../mock/detailData.json';
 
 const DetailScreen = ({ route }) => {
   const { text } = route.params;
+  // console.log('params Name : ', text);
+  // console.log(detailArr[0].title.name);
   const navigation = useNavigation();
   const [like, setLike] = useState(false);
-
   const [scrollToY, setScrollToY] = useState(0);
   const [ref, setRef] = useState();
-
+  const [passData, setPassData] = useState('');
+  const [otherRank, setOtherRank] = useState([{ name: '', rank: 0 }]);
+  useEffect(() => {
+    let selectRank = 0;
+    const data = detailArr.filter((data, idx) => {
+      if (data.title.name === text) {
+        setPassData(data);
+        if (idx > 0) setOtherRank([detailArr[idx - 1].title.name, detailArr[idx + 1].title.name]);
+        else setOtherRank([{ name: '', rank: 0 }, detailArr[idx + 1].title]);
+      }
+    });
+  }, []);
+  // console.log('rank', otherRank);
   const activeLike = () => {
     setLike(!like);
   };
@@ -39,6 +53,8 @@ const DetailScreen = ({ route }) => {
       <Title //
         activeLike={activeLike}
         like={like}
+        data={passData.title}
+        otherRank={otherRank}
       />
       <InvestmentScore />
       <TransactionPrice />
