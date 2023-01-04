@@ -7,21 +7,8 @@ import { greyColor, SCREEN_HEIGHT, blueColor } from '../theme';
 
 const FixedHeader = ({ sort, setSort }) => {
   const sortName = ['수익순', '가격순', '인기순'];
-  // const sortFunc = sortName => {
-  //   setSort(sortName);
-  // };
   return (
     <HeaderContainer>
-      <SearchBar>
-        <Search //
-          placeholder='검색어를 입력해 주세요. [지역, 집 이름, 가격]'
-          returnKeyType='search'
-        />
-        <SearchIcon>
-          <Ionicons name={'md-search-outline'} color={'grey'} size={25} />
-        </SearchIcon>
-      </SearchBar>
-
       <SortFilterBar>
         <Sort>
           {sortName.map((name, idx) => {
@@ -47,26 +34,12 @@ const FixedHeader = ({ sort, setSort }) => {
 };
 
 const HeaderContainer = styled.View`
-  padding: 10px 0;
+  padding-bottom: 15px;
   width: 100%;
-  height: ${SCREEN_HEIGHT / 7}px;
+  height: 60px;
   background-color: white;
-  border-bottom: 2px solid grey;
   align-items: center;
-  justify-content: space-between;
-`;
-
-const SearchBar = styled.View`
-  align-items: center;
-  width: 100%;
-`;
-
-const Search = styled.TextInput`
-  padding: 12px;
-  margin: 0 10px;
-  width: 90%;
-  border: 1px solid grey;
-  border-radius: 5px;
+  justify-content: flex-end;
 `;
 
 const SortFilterBar = styled.View`
@@ -94,12 +67,6 @@ const SortingText = styled.Text`
 
 const Filter = styled.TouchableOpacity`
   justify-content: flex-end;
-`;
-
-const SearchIcon = styled.View`
-  top: 18%;
-  right: 8%;
-  position: absolute;
 `;
 
 export default FixedHeader;

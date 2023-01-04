@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { blueColor, greyColor } from '../../theme';
 
 const Title = ({ activeLike, like, otherRank, data }) => {
-  console.log(otherRank);
+  // console.log(otherRank);
   const navigation = useNavigation();
   const goDetail = () => {
     navigation.push('Stack', { screen: 'Detail' });

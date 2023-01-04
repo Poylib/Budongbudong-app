@@ -19,31 +19,39 @@ import detailArr from '../../mock/detailData.json';
 
 const DetailScreen = ({ route }) => {
   const { text } = route.params;
-  // console.log('params Name : ', text);
-  // console.log(detailArr[0].title.name);
   const navigation = useNavigation();
   const [like, setLike] = useState(false);
   const [scrollToY, setScrollToY] = useState(0);
   const [ref, setRef] = useState();
-  const [passData, setPassData] = useState('');
-  const [otherRank, setOtherRank] = useState([{ name: '', rank: 0 }]);
-  useEffect(() => {
-    let selectRank = 0;
-    const data = detailArr.filter((data, idx) => {
-      if (data.title.name === text) {
-        setPassData(data);
-        if (idx > 0) setOtherRank([detailArr[idx - 1].title.name, detailArr[idx + 1].title.name]);
-        else setOtherRank([{ name: '', rank: 0 }, detailArr[idx + 1].title]);
-      }
-    });
-  }, []);
-  // console.log('rank', otherRank);
+  const [passData, setPassData] = useState({
+    id: 1,
+    title: {
+      name: '',
+      rank: 0,
+    },
+  });
+  const [otherRank, setOtherRank] = useState([
+    { name: '', rank: 0 },
+    { name: '', rank: 0 },
+  ]);
+
   const activeLike = () => {
     setLike(!like);
   };
   const handleScroll = () => {
     ref.scrollTo({ y: scrollToY, animated: true });
   };
+
+  useEffect(() => {
+    let selectRank = 0;
+    const data = detailArr.filter((data, idx) => {
+      if (data.title.name === text) {
+        setPassData(data);
+        if (idx > 0) setOtherRank([detailArr[idx - 1].title, detailArr[idx + 1].title]);
+        else setOtherRank([{ name: '', rank: 0 }, detailArr[idx + 1].title]);
+      }
+    });
+  }, []);
   return (
     <DetailScreenContainer //
       ref={ref => {
@@ -56,7 +64,7 @@ const DetailScreen = ({ route }) => {
         data={passData.title}
         otherRank={otherRank}
       />
-      <InvestmentScore />
+      <InvestmentScore score={passData.score} />
       <TransactionPrice />
       <View
         onLayout={e => {
