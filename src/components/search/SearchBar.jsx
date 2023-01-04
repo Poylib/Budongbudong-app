@@ -1,7 +1,28 @@
 import styled from 'styled-components/native';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
+import React, { useRef, useState } from 'react';
 
-const SearchBar = () => {
+const SearchBar = ({
+  //
+  query,
+  setQuery,
+  setModal,
+  searchList,
+  setFlatData,
+}) => {
+  const timeSet = useRef();
+
+  const onChangeText = text => {
+    clearTimeout(timeSet.current);
+    timeSet.current = setTimeout(() => {
+      setQuery(text);
+    }, 300);
+  };
+  // console.log(query);
+  const SearchActive = () => {
+    setModal(false);
+    setFlatData(searchList);
+  };
   return (
     <SearchView>
       <Search //
@@ -9,8 +30,11 @@ const SearchBar = () => {
         returnKeyType='search'
         autoCorrect={false}
         clearTextOnFocus={true}
+        onChangeText={onChangeText}
+        onPressIn={() => setModal(true)}
+        onSubmitEditing={SearchActive}
       />
-      <SearchIcon>
+      <SearchIcon onPress={SearchActive}>
         <Ionicons name={'md-search-outline'} color={'grey'} size={25} />
       </SearchIcon>
     </SearchView>
@@ -31,7 +55,7 @@ const Search = styled.TextInput`
   border-radius: 5px;
 `;
 
-const SearchIcon = styled.View`
+const SearchIcon = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   top: 18%;
   right: 8%;
   position: absolute;
