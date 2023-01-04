@@ -5,42 +5,52 @@ import { blueColor } from '../../theme';
 import { Line } from '../search/PriceGraph';
 
 const InvestmentScore = () => {
+  const titleText = ['전세가율', '갭가격', '시가총액', '평당매매가'];
+
+  const WonConversion = num => {
+    if (num >= 100000000) return `${String(Math.ceil((num / 100000000) * 10) / 10)}억`;
+    else return `${String(Math.ceil((num / 10000000) * 10) / 10)}천만`;
+  };
+  // console.log(conversion(55000000));
+  const arr = [
+    {
+      id: 1,
+      value: '68.5%',
+      top: '68%',
+    },
+    {
+      id: 2,
+      value: 130000000,
+      top: '68%',
+    },
+    {
+      id: 3,
+      value: 58.4,
+      top: '68%',
+    },
+    {
+      id: 4,
+      value: 58.4,
+      top: '68%',
+    },
+  ];
+  console.log(typeof arr[0].value === 'string');
   return (
     <DetailContainer>
       <TitleText>투자 항목 점수</TitleText>
       <ContentColumn>
-        <ContentRow>
-          <RowName>전세가율</RowName>
-          <StatsBox>
-            <Text>58.4 %</Text>
-            <Line bold={true} />
-            <RowPercent>상위 69%</RowPercent>
-          </StatsBox>
-        </ContentRow>
-        <ContentRow>
-          <RowName>갭가격</RowName>
-          <StatsBox>
-            <Text>1.5억원</Text>
-            <Line bold={true} />
-            <RowPercent>상위 44%</RowPercent>
-          </StatsBox>
-        </ContentRow>
-        <ContentRow>
-          <RowName>시가총액</RowName>
-          <StatsBox>
-            <Text>703.7억원</Text>
-            <Line bold={true} />
-            <RowPercent>상위 56%</RowPercent>
-          </StatsBox>
-        </ContentRow>
-        <ContentRow>
-          <RowName>평당매매가</RowName>
-          <StatsBox>
-            <Text>1.4천만원</Text>
-            <Line bold={true} />
-            <RowPercent>상위 42%</RowPercent>
-          </StatsBox>
-        </ContentRow>
+        {arr.map((row, idx) => {
+          return (
+            <ContentRow key={row.id}>
+              <RowName>{titleText[idx]}</RowName>
+              <StatsBox>
+                <Text>{typeof row.value === 'number' ? WonConversion(row.value) : row.value}</Text>
+                <Line bold={true} />
+                <RowPercent>상위 {row.top}</RowPercent>
+              </StatsBox>
+            </ContentRow>
+          );
+        })}
       </ContentColumn>
     </DetailContainer>
   );

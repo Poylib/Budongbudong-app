@@ -16,7 +16,8 @@ import { DetailContainer } from '../components/detail/InvestmentScore';
 import { blueColor, greyColor } from '../theme';
 import { useNavigation } from '@react-navigation/native';
 
-const DetailScreen = () => {
+const DetailScreen = ({ route }) => {
+  const { text } = route.params;
   const navigation = useNavigation();
   const [like, setLike] = useState(false);
 

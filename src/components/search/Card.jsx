@@ -7,8 +7,9 @@ import { imgArr } from '../../constant/buildingImg';
 
 const Card = ({ item }) => {
   const navigation = useNavigation();
+  const { text } = item;
   const goDetail = () => {
-    navigation.navigate('Stack', { screen: 'Detail' });
+    navigation.navigate('Stack', { screen: 'Detail', params: { text } });
   };
 
   return (

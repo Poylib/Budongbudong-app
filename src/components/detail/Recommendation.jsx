@@ -1,15 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FlatList, Image, Text, View } from 'react-native';
 import styled from 'styled-components/native';
 import { AirbnbRating } from 'react-native-ratings';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { blueColor, greyColor, styles } from '../../theme';
 import { DetailContainer, TitleText } from './InvestmentScore';
 import { NameRow } from './TransactionPrice';
 import RecData from '../../../mock/RecData.json';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import { LikeButton } from './Title';
+import { getData } from '../../utils';
 const Recommendation = () => {
-  const [rating, setRating] = useState(1);
+  const { getItem, setItem } = useAsyncStorage('rating');
+  const [rating, setRating] = useState(5);
+
+  const readItemFromStorage = async () => {
+    const item = await getItem();
+    if (item !== null) setRating(item);
+    else setRating(5);
+  };
+
+  const writeItemToStorage = async newValue => {
+    await setItem(newValue);
+    setRating(newValue);
+  };
+
+  useEffect(() => {
+    readItemFromStorage();
+  }, []);
   return (
     <DetailContainer>
       <NameRow>
@@ -33,8 +51,8 @@ const Recommendation = () => {
         <BoldText>만족도를 입력해 주셔서 감사합니다</BoldText>
         <AirbnbRating //
           unSelectedColor={greyColor}
-          defaultRating={5}
-          onFinishRating={rate => setRating(rate)}
+          defaultRating={Number(rating)}
+          onFinishRating={rate => writeItemToStorage(String(rate))}
           ratingContainerStyle={{ paddingTop: 5, height: 30 }}
           reviews={[]}
           size={30}

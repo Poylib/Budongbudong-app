@@ -5,7 +5,7 @@ import { blueColor, greyColor, redColor } from '../../theme';
 
 const PriceGraph = ({ item }) => {
   const priceConversion = num => {
-    let str = String(Math.floor((num / 100000000) * 10) / 10);
+    let str = String(Math.ceil((num / 100000000) * 10) / 10);
 
     return str.length < 3 ? `${str}.0 억` : `${str} 억`;
   };

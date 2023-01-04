@@ -19,8 +19,6 @@ const SearchScreen = () => {
     } else if (sort === '인기순') {
       let arr = flatData.sort((a, b) => a.like - b.like);
       setFlatData([...arr]);
-    } else {
-      console.log('error');
     }
   }, [sort]);
   return (
