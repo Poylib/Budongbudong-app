@@ -42,6 +42,7 @@ const SearchScreen = () => {
       }
     } else setSearchList(SearchData);
   }, [query]);
+  // console.log(searchList[0]);
   return (
     <>
       <SafeAreaView style={{ backgroundColor: 'white', paddingBottom: 79 }} edges={['top', 'bottom']}>
@@ -76,7 +77,7 @@ const SearchScreen = () => {
                     <IconBox>
                       <Ionicons name={'map-outline'} size={15} color={'white'} />
                     </IconBox>
-                    <SearchText>{search.text}</SearchText>
+                    <SearchText>{`${search.text}`}</SearchText>
                   </SearchRow>
                 );
               })}

@@ -8,7 +8,8 @@
     "profit": -10,
     "graph": "assets/images/graph.jpg",
     "img": null,
-    "like": 20
+    "like": 20,
+    "address": "경기도 오산시 원동"
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "profit": -6,
     "graph": "assets/images/graph.jpg",
     "img": null,
-    "like": 10
+    "like": 10,
+    "address": "경기도 군포시 금정동"
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "profit": -12,
     "graph": "assets/images/graph.jpg",
     "img": "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg",
-    "like": 7
+    "like": 7,
+    "address": "경기도 오산시 갈곶동"
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "profit": -4,
     "graph": "assets/images/graph.jpg",
     "img": "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg",
-    "like": 2
+    "like": 2,
+    "address": "경기도 오산시 원동"
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "profit": -7,
     "graph": "assets/images/graph.jpg",
     "img": "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg",
-    "like": 21
+    "like": 21,
+    "address": "경기도 오산시 오산동"
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "profit": -13,
     "graph": "assets/images/graph.jpg",
     "img": null,
-    "like": 3
+    "like": 3,
+    "address": "경기도 시흥시 정왕동"
   },
   {
     "id": 7,
@@ -74,18 +80,8 @@
     "profit": -6,
     "graph": "assets/images/graph.jpg",
     "img": "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg",
-    "like": 6
-  },
-  {
-    "id": 8,
-    "text": "대진",
-    "price": 350000000,
-    "squareMeter": "118㎡(36평)",
-    "leasePrice": 270000000,
-    "profit": 9,
-    "graph": "assets/images/graph.jpg",
-    "img": "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg",
-    "like": 8
+    "like": 6,
+    "address": "서울특별시 은평구 응암1동"
   },
   {
     "id": 9,
@@ -96,19 +92,21 @@
     "profit": 4,
     "graph": "assets/images/graph.jpg",
     "img": null,
-    "like": 1
+    "like": 1,
+    "address": "서울특별시 서초구 반포1동"
   },
 
   {
     "id": 10,
     "text": "장미6차",
-    "price": 170000000,
-    "squareMeter": "118㎡(36평)",
-    "leasePrice": 90000000,
-    "profit": 11,
+    "price": 430000000,
+    "squareMeter": "55㎡(17평)",
+    "leasePrice": 8000000,
+    "profit": 3,
     "graph": "assets/images/graph.jpg",
     "img": "https://cdn.pixabay.com/photo/2017/06/22/17/51/window-2431825__480.jpg",
-    "like": 9
+    "like": 9,
+    "address": "경기도 고양시 행주동"
   },
   {
     "id": 11,
@@ -119,18 +117,20 @@
     "profit": -6,
     "graph": "assets/images/graph.jpg",
     "img": "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg",
-    "like": 16
+    "like": 16,
+    "address": "경기도 오산시 원동"
   },
   {
     "id": 12,
     "text": "일신가든",
-    "price": 120000000,
-    "squareMeter": "118㎡(36평)",
-    "leasePrice": 40000000,
-    "profit": -5,
+    "price": 80000000,
+    "squareMeter": "76㎡(23평)",
+    "leasePrice": 60000000,
+    "profit": -9,
     "graph": "assets/images/graph.jpg",
     "img": "https://cdn.pixabay.com/photo/2016/06/24/19/27/construction-site-1477687__480.jpg",
-    "like": 11
+    "like": 11,
+    "address": "경기도 평택시 신장동"
   },
   {
     "id": 13,
@@ -156,24 +156,14 @@
   },
   {
     "id": 15,
-    "text": "우주마루",
-    "price": 280000000,
-    "squareMeter": "65㎡(20평)",
-    "leasePrice": 210000000,
-    "profit": -12,
+    "text": "계명(343-65)",
+    "price": 260000000,
+    "squareMeter": "79㎡(24평)",
+    "leasePrice": 250000000,
+    "profit": -7,
     "graph": "assets/images/graph.jpg",
     "img": "https://cdn.pixabay.com/photo/2017/10/17/19/11/fantasy-2861815__480.jpg",
-    "like": 18
-  },
-  {
-    "id": 16,
-    "text": "어반휴플러스",
-    "price": 130000000,
-    "squareMeter": "118㎡(36평)",
-    "leasePrice": 140000000,
-    "profit": -9,
-    "graph": "assets/images/graph.jpg",
-    "img": "https://cdn.pixabay.com/photo/2022/04/10/19/33/house-7124141_960_720.jpg",
-    "like": 6
+    "like": 18,
+    "address": "서울특별시 강서구 화곡동 계명"
   }
 ]

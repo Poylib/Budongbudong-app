@@ -30,7 +30,6 @@ const SearchBar = ({
         placeholder='검색어를 입력해 주세요. [지역, 집 이름, 가격]'
         returnKeyType='search'
         autoCorrect={false}
-        clearTextOnFocus={true}
         onChangeText={onChangeText}
         onFocus={() => setModal(true)}
         onSubmitEditing={SearchActive}
