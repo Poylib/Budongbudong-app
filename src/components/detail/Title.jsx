@@ -4,12 +4,9 @@ import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 import { blueColor, greyColor } from '../../theme';
-
+import { pushDetail } from '../../utils';
 const Title = ({ activeLike, like, otherRank, data }) => {
   const navigation = useNavigation();
-  const goDetail = text => {
-    navigation.push('Stack', { screen: 'Detail', params: { text } });
-  };
   return (
     data && (
       <TitleContainer>
@@ -29,12 +26,12 @@ const Title = ({ activeLike, like, otherRank, data }) => {
         </RankBox>
         <TextBox>
           {otherRank[0].rank !== 0 && (
-            <RankBtn onPress={() => goDetail(otherRank[0].name)}>
+            <RankBtn onPress={() => pushDetail(navigation, otherRank[0].name)}>
               <LightText>{otherRank[0].name}</LightText>
             </RankBtn>
           )}
           <BoldText>{data.name}</BoldText>
-          <RankBtn onPress={() => goDetail(otherRank[1].name)}>
+          <RankBtn onPress={() => pushDetail(navigation, otherRank[1].name)}>
             <LightText>{otherRank[1].name}</LightText>
           </RankBtn>
         </TextBox>
@@ -78,7 +75,7 @@ const BigRankig = styled.View`
   justify-content: center;
   background-color: ${blueColor};
 `;
-const BoldText = styled.Text`
+const BoldText = styled.Text.attrs({ ellipsizeMode: 'tail', numberOfLines: 1 })`
   font-size: 24px;
   font-weight: 600;
   margin: 3px 0;
@@ -95,7 +92,7 @@ const TextBox = styled.View`
 
 const RankBtn = styled.TouchableOpacity.attrs({ activeOpacity: 1 })``;
 
-const LightText = styled.Text`
+const LightText = styled.Text.attrs({ ellipsizeMode: 'tail', numberOfLines: 1 })`
   color: lightgrey;
   font-size: 15px;
 `;

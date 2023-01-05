@@ -12,8 +12,8 @@ const PriceGraph = ({ item }) => {
   return (
     <StyledPriceGraph>
       <StyledTitleBox>
-        <ItemName>{item.text}</ItemName>
-        <ItemSmallName>{item.squareMeter}</ItemSmallName>
+        <ItemName>{item.text.length > 9 ? item.text.slice(0, 9) + '...' : item.text}</ItemName>
+        <ItemSmallName>{item.pyeong}</ItemSmallName>
       </StyledTitleBox>
 
       <StyledPriceBox>
@@ -59,7 +59,6 @@ const StyledTitleBox = styled.View`
   flex-direction: row;
   align-items: center;
 `;
-
 const ItemName = styled.Text`
   font-size: 17px;
   font-weight: bold;
@@ -68,7 +67,7 @@ const ItemName = styled.Text`
 
 const ItemSmallName = styled.Text`
   margin-left: 5px;
-  font-size: 14px;
+  font-size: 12px;
   color: grey;
 `;
 

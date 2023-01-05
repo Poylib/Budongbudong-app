@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
+import Modal from 'react-native-modal';
 import { DetailContainer, TitleText } from './InvestmentScore';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
-import { greyColor } from '../../theme';
+import { greyColor, SCREEN_WIDTH } from '../../theme';
 import { BlueText } from '../swiper/LoginSwiper';
 import CategoryBtn from './CategoryBtn';
 import { styles } from '../../theme';
@@ -14,7 +15,8 @@ const TransactionPrice = ({ saleInfo }) => {
   const [pickKind, setPickKind] = useState('매매');
   const [pickPeriod, setpickPeriod] = useState(periodData.dataSet[0].title);
   const [price, setPrice] = useState(0);
-  console.log(price);
+  const [isOpen, setIsOpen] = useState(false);
+  console.log(saleInfo);
   useEffect(() => {
     let changePrice = 0;
     if (pickKind === '매매') {
@@ -23,50 +25,60 @@ const TransactionPrice = ({ saleInfo }) => {
     setPrice(changePrice);
   }, [pickKind]);
   return (
-    <DetailContainer>
-      <NameRow>
-        <TitleText>실거래가 정보</TitleText>
-        <TitleToggle //
-          style={styles.shadow}
-          activeOpacity={1}>
-          <Text style={{ fontSize: 13 }}>36평형</Text>
-          <AntDesign name={'down'} size={10} />
-        </TitleToggle>
-      </NameRow>
-      <CategoryBtn //
-        data={priceData}
-        setFunc={setPickKind}
-      />
-      <Average>
-        <AverageView>
-          <Text style={{ fontSize: 12 }}>최근 실거래가 평균</Text>
-          <Text style={{ fontSize: 12 }}>(3건 평균)</Text>
-        </AverageView>
-        <AverageView>
-          <BlueText style={{ fontWeight: 'bold', fontSize: 30 }}>{price !== '0원' ? price : WonConversion(saleInfo.salePrice)}</BlueText>
-        </AverageView>
-      </Average>
-      <HorizontalBorder />
-      <PeriodCategory>
+    <>
+      <Modal //
+        style={{ width: SCREEN_WIDTH, margin: 'auto' }}
+        animationInTiming={500}
+        isVisible={isOpen}
+        swipeDirection={'down'}
+        swipeThreshold={300}
+        onSwipeComplete={() => setIsOpen(false)}></Modal>
+      <DetailContainer>
+        <NameRow>
+          <TitleText>실거래가 정보</TitleText>
+          <TitleToggle //
+            style={styles.shadow}
+            onPress={() => setIsOpen(true)}
+            activeOpacity={1}>
+            <Text style={{ fontSize: 13 }}>36평형</Text>
+            <AntDesign name={'down'} size={10} />
+          </TitleToggle>
+        </NameRow>
         <CategoryBtn //
-          data={periodData}
-          setFunc={setpickPeriod}
+          data={priceData}
+          setFunc={setPickKind}
         />
-        <GraphSection>
-          <Text>Graph</Text>
-        </GraphSection>
-        <TradeTitleRow>
-          <Text>계약일</Text>
-          <Text>가격</Text>
-          <Text>타입</Text>
-          <Text>층</Text>
-        </TradeTitleRow>
-      </PeriodCategory>
-      <HorizontalBorder />
-      <MoreButton>
-        <MoreText>실거래가 더보기 +</MoreText>
-      </MoreButton>
-    </DetailContainer>
+        <Average>
+          <AverageView>
+            <Text style={{ fontSize: 12 }}>최근 실거래가 평균</Text>
+            <Text style={{ fontSize: 12 }}>(3건 평균)</Text>
+          </AverageView>
+          <AverageView>
+            <BlueText style={{ fontWeight: 'bold', fontSize: 30 }}>{price !== '0원' ? price : WonConversion(saleInfo.salePrice)}</BlueText>
+          </AverageView>
+        </Average>
+        <HorizontalBorder />
+        <PeriodCategory>
+          <CategoryBtn //
+            data={periodData}
+            setFunc={setpickPeriod}
+          />
+          <GraphSection>
+            <Text>Graph</Text>
+          </GraphSection>
+          <TradeTitleRow>
+            <Text>계약일</Text>
+            <Text>가격</Text>
+            <Text>타입</Text>
+            <Text>층</Text>
+          </TradeTitleRow>
+        </PeriodCategory>
+        <HorizontalBorder />
+        <MoreButton>
+          <MoreText>실거래가 더보기 +</MoreText>
+        </MoreButton>
+      </DetailContainer>
+    </>
   );
 };
 

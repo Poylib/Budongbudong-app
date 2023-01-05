@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/native';
-import { TouchableOpacity, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { View } from 'react-native';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
+import { blueColor, greyColor } from '../theme';
+import detailArr from '../../mock/detailData.json';
+import { renderData } from '../constant';
+
 import BasicInformation from '../components/detail/BasicInformation';
 import InformationField from '../components/detail/InformationField';
 import InvestmentScore from '../components/detail/InvestmentScore';
@@ -12,10 +17,7 @@ import SaleInformation from '../components/detail/SaleInformation';
 import Title from '../components/detail/Title';
 import TransactionPrice from '../components/detail/TransactionPrice';
 import { DetailContainer } from '../components/detail/InvestmentScore';
-import { blueColor, greyColor } from '../theme';
-import { useNavigation } from '@react-navigation/native';
-import detailArr from '../../mock/detailData.json';
-import { renderData } from '../constant';
+import Service from '../components/detail/Service';
 
 const DetailScreen = ({ route }) => {
   const { text } = route.params;
@@ -70,17 +72,8 @@ const DetailScreen = ({ route }) => {
       <InformationField />
       <Report />
       <BasicInformation />
-      <Recommendation />
-      <DetailContainer>
-        <ServiceText>혹시 아파트 정보가 수정이 필요하다면</ServiceText>
-        <ServiceText>수정해주세요. 부동부동 서비스를</ServiceText>
-        <ServiceText>함께 만들어가요!</ServiceText>
-        <TouchableOpacity //
-          onPress={() => navigation.navigate('Contact')}
-          activeOpacity={1}>
-          <ContactText>정정 및 요청 문의하기 ></ContactText>
-        </TouchableOpacity>
-      </DetailContainer>
+      <Recommendation data={passData.title} />
+      <Service />
       <DetailContainer style={{ marginBottom: 50 }}>
         <View style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
           <BottomBtn onPress={activeLike}>
@@ -104,18 +97,6 @@ const DetailScreen = ({ route }) => {
 const DetailScreenContainer = styled.ScrollView`
   width: 100%;
 `;
-
-const ServiceText = styled.Text`
-  color: grey;
-`;
-
-const ContactText = styled.Text`
-  padding: 20px 0;
-  color: ${blueColor};
-  font-size: 16px;
-  font-weight: 600;
-`;
-
 const BottomBtn = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   height: 55px;
   width: 49%;

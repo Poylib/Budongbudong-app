@@ -19,7 +19,6 @@ const SearchBar = ({
       setQuery(text);
     }, 300);
   };
-  // console.log(query);
   const SearchActive = () => {
     setModal(false);
     setFlatData(searchList);
@@ -31,7 +30,7 @@ const SearchBar = ({
         returnKeyType='search'
         autoCorrect={false}
         onChangeText={onChangeText}
-        onFocus={() => setModal(true)}
+        onPressIn={() => setModal(true)}
         onSubmitEditing={SearchActive}
       />
       <SearchIcon onPress={SearchActive}>

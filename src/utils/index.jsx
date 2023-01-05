@@ -5,3 +5,7 @@ export const WonConversion = num => {
   else if (num >= 1000000) return `${String(Math.ceil((num / 10000000) * 100) / 10)}백만원`;
   else return '0원';
 };
+
+export const pushDetail = (nav, text) => {
+  nav.push('Stack', { screen: 'Detail', params: { text } });
+};

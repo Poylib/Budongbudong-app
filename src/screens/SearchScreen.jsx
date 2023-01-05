@@ -29,10 +29,9 @@ const SearchScreen = () => {
       setFlatData([...arr]);
     }
   }, [sort]);
-
   useEffect(() => {
     if (query) {
-      const result = SearchData.filter(el => el.text.includes(query));
+      const result = SearchData.filter(el => el.address.includes(query) || el.text.includes(query));
       if (result.length) {
         setSearchList(result);
         setSearchEmpty(false);
@@ -42,7 +41,6 @@ const SearchScreen = () => {
       }
     } else setSearchList(SearchData);
   }, [query]);
-  // console.log(searchList[0]);
   return (
     <>
       <SafeAreaView style={{ backgroundColor: 'white', paddingBottom: 79 }} edges={['top', 'bottom']}>
@@ -66,7 +64,8 @@ const SearchScreen = () => {
         {modal && query && (
           <Modal>
             <SearchView>
-              {searchList.map(search => {
+              {searchList.slice(0, 8).map(search => {
+                const inText = `${search.address} ${search.text}`;
                 return (
                   <SearchRow
                     key={search.id}
@@ -77,7 +76,7 @@ const SearchScreen = () => {
                     <IconBox>
                       <Ionicons name={'map-outline'} size={15} color={'white'} />
                     </IconBox>
-                    <SearchText>{`${search.text}`}</SearchText>
+                    <SearchText>{inText}</SearchText>
                   </SearchRow>
                 );
               })}
@@ -97,7 +96,7 @@ const SearchScreen = () => {
 };
 
 const Modal = styled.View`
-  height: 100%;
+  height: 108%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 1;
@@ -115,19 +114,18 @@ const SearchRow = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   flex-direction: row;
   align-items: center;
   width: 100%;
-  margin: 8px 0;
+  margin: 7px 0;
 `;
 const IconBox = styled.View`
   align-items: center;
   justify-content: center;
   border-radius:50px
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
   background-color: lightgrey;
 `;
 
 const SearchText = styled.Text`
-  font-size: 16px;
   margin: 0 10px;
 `;
 

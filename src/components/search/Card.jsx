@@ -24,7 +24,7 @@ const Card = ({ item }) => {
           ) : (
             <Img //
               style={{ width: 60, height: 75 }}
-              source={imgArr[item.id % 3]}
+              source={imgArr[item.id % 5]}
             />
           )}
         </ImegeSection>
