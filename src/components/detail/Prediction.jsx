@@ -9,7 +9,7 @@ const Prediction = () => {
     <DetailContainer>
       <TitleText>부동부동 시세 예측</TitleText>
       <Chart>
-        <Text>Chart</Text>
+        <BlankChart source={require('../../../assets/images/blank_graph.png')} />
       </Chart>
     </DetailContainer>
   );
@@ -18,10 +18,13 @@ const Prediction = () => {
 const Chart = styled.View`
   width: 90%;
   height: 250px;
-  background-color: ${greyColor};
   margin: 20px auto;
   align-items: center;
-  justify-content: center;
+`;
+
+const BlankChart = styled.Image`
+  width: 90%;
+  height: 230px;
 `;
 
 export default Prediction;

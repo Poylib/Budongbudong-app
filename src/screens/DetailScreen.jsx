@@ -6,6 +6,7 @@ import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import { blueColor, greyColor } from '../theme';
 import detailArr from '../../mock/detailData.json';
 import { renderData } from '../constant';
+import { handleScroll } from '../utils';
 
 import BasicInformation from '../components/detail/BasicInformation';
 import InformationField from '../components/detail/InformationField';
@@ -23,7 +24,7 @@ const DetailScreen = ({ route }) => {
   const { text } = route.params;
   const navigation = useNavigation();
   const [like, setLike] = useState(false);
-  const [scrollToY, setScrollToY] = useState(0);
+  const [scrollToInfo, setScrollToInfo] = useState(0);
   const [ref, setRef] = useState();
   const [passData, setPassData] = useState(renderData);
   const [otherRank, setOtherRank] = useState([
@@ -33,8 +34,9 @@ const DetailScreen = ({ route }) => {
   const activeLike = () => {
     setLike(!like);
   };
-  const handleScroll = () => {
-    ref.scrollTo({ y: scrollToY, animated: true });
+
+  const handleScroll = toY => {
+    ref.scrollTo({ y: toY, animated: true });
   };
 
   useEffect(() => {
@@ -60,11 +62,11 @@ const DetailScreen = ({ route }) => {
         otherRank={otherRank}
       />
       <InvestmentScore score={passData.score} />
-      <TransactionPrice saleInfo={passData.saleInfo} />
+      <TransactionPrice saleInfo={passData.saleInfo} ref={ref} />
       <View
         onLayout={e => {
           const layout = e.nativeEvent.layout;
-          setScrollToY(layout.y);
+          setScrollToInfo(layout.y);
         }}
       />
       <SaleInformation />
@@ -82,7 +84,7 @@ const DetailScreen = ({ route }) => {
             </IconView>
             <BtnText style={{ color: like ? blueColor : 'grey' }}>찜하기</BtnText>
           </BottomBtn>
-          <BottomBtn onPress={handleScroll}>
+          <BottomBtn onPress={() => handleScroll(scrollToInfo)}>
             <BtnText style={{ color: blueColor }}>매물더보기+</BtnText>
           </BottomBtn>
         </View>

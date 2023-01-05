@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import Modal from 'react-native-modal';
@@ -9,14 +9,19 @@ import { BlueText } from '../swiper/LoginSwiper';
 import CategoryBtn from './CategoryBtn';
 import { styles } from '../../theme';
 import { periodData, priceData } from '../../constant';
-import { WonConversion } from '../../utils';
+import { handleScroll, WonConversion } from '../../utils';
+import SpaceSelectModal from './SpaceSelectModal';
 
-const TransactionPrice = ({ saleInfo }) => {
+const TransactionPrice = forwardRef(({ saleInfo }, ref) => {
   const [pickKind, setPickKind] = useState('매매');
   const [pickPeriod, setpickPeriod] = useState(periodData.dataSet[0].title);
   const [price, setPrice] = useState(0);
+  const [scrollToPrice, setScrollToPrice] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-  console.log(saleInfo);
+  const moveScroll = () => {
+    ref.scrollTo({ y: scrollToPrice, animated: true });
+  };
+
   useEffect(() => {
     let changePrice = 0;
     if (pickKind === '매매') {
@@ -32,15 +37,25 @@ const TransactionPrice = ({ saleInfo }) => {
         isVisible={isOpen}
         swipeDirection={'down'}
         swipeThreshold={300}
-        onSwipeComplete={() => setIsOpen(false)}></Modal>
-      <DetailContainer>
+        onSwipeComplete={() => setIsOpen(false)}>
+        <SpaceSelectModal //
+          data={saleInfo}
+          moveScroll={moveScroll}
+          setIsOpen={setIsOpen}
+        />
+      </Modal>
+      <DetailContainer
+        onLayout={e => {
+          const layout = e.nativeEvent.layout;
+          setScrollToPrice(layout.y);
+        }}>
         <NameRow>
           <TitleText>실거래가 정보</TitleText>
           <TitleToggle //
             style={styles.shadow}
             onPress={() => setIsOpen(true)}
             activeOpacity={1}>
-            <Text style={{ fontSize: 13 }}>36평형</Text>
+            <Text style={{ fontSize: 13 }}>33평형</Text>
             <AntDesign name={'down'} size={10} />
           </TitleToggle>
         </NameRow>
@@ -80,7 +95,7 @@ const TransactionPrice = ({ saleInfo }) => {
       </DetailContainer>
     </>
   );
-};
+});
 
 export const NameRow = styled.View`
   flex-direction: row;
