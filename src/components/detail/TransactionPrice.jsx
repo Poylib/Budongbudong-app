@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import { DetailContainer, TitleText } from './InvestmentScore';
@@ -8,10 +8,19 @@ import { BlueText } from '../swiper/LoginSwiper';
 import CategoryBtn from './CategoryBtn';
 import { styles } from '../../theme';
 import { periodData, priceData } from '../../constant';
+import { WonConversion } from '../../utils';
 
-const TransactionPrice = () => {
-  const [pickKind, setPickKind] = useState(priceData.dataSet[0].title);
+const TransactionPrice = ({ saleInfo }) => {
+  const [pickKind, setPickKind] = useState('매매');
   const [pickPeriod, setpickPeriod] = useState(periodData.dataSet[0].title);
+  const [price, setPrice] = useState(0);
+  useEffect(() => {
+    let changePrice = 0;
+    if (pickKind === '매매') {
+      changePrice = WonConversion(saleInfo.salePrice);
+    } else changePrice = WonConversion(saleInfo.leasePrice);
+    setPrice(changePrice);
+  }, [pickKind]);
   return (
     <DetailContainer>
       <NameRow>
@@ -33,7 +42,7 @@ const TransactionPrice = () => {
           <Text style={{ fontSize: 12 }}>(3건 평균)</Text>
         </AverageView>
         <AverageView>
-          <BlueText style={{ fontWeight: 'bold', fontSize: 30 }}>33.4억원</BlueText>
+          <BlueText style={{ fontWeight: 'bold', fontSize: 30 }}>{price !== '0백만' ? price : WonConversion(saleInfo.salePrice)}원</BlueText>
         </AverageView>
       </Average>
       <HorizontalBorder />

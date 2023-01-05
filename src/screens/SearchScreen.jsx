@@ -42,7 +42,6 @@ const SearchScreen = () => {
       }
     } else setSearchList(SearchData);
   }, [query]);
-
   return (
     <>
       <SafeAreaView style={{ backgroundColor: 'white', paddingBottom: 79 }} edges={['top', 'bottom']}>
@@ -63,22 +62,25 @@ const SearchScreen = () => {
           bounces={false}
           extraData={flatData}
         />
-        {modal && (
+        {modal && query && (
           <Modal>
-            {query && (
-              <SearchView>
-                {searchList.map(search => {
-                  return (
-                    <SearchRow key={search.id}>
-                      <IconBox>
-                        <Ionicons name={'map-outline'} size={15} color={'white'} />
-                      </IconBox>
-                      <SearchText>{search.text}</SearchText>
-                    </SearchRow>
-                  );
-                })}
-              </SearchView>
-            )}
+            <SearchView>
+              {searchList.map(search => {
+                return (
+                  <SearchRow
+                    key={search.id}
+                    onPress={() => {
+                      setFlatData([search]);
+                      setModal(false);
+                    }}>
+                    <IconBox>
+                      <Ionicons name={'map-outline'} size={15} color={'white'} />
+                    </IconBox>
+                    <SearchText>{search.text}</SearchText>
+                  </SearchRow>
+                );
+              })}
+            </SearchView>
             <TouchableOpacity //
               onPress={() => {
                 Keyboard.dismiss();

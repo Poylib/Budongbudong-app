@@ -34,7 +34,7 @@ const Title = ({ activeLike, like, otherRank, data }) => {
             </RankBtn>
           )}
           <BoldText>{data.name}</BoldText>
-          <RankBtn onPress={() => goDetail(otherRank[0].name)}>
+          <RankBtn onPress={() => goDetail(otherRank[1].name)}>
             <LightText>{otherRank[1].name}</LightText>
           </RankBtn>
         </TextBox>

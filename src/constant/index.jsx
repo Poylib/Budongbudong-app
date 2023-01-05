@@ -35,3 +35,16 @@ export const periodData = {
     },
   ],
 };
+
+export const renderData = {
+  id: 0,
+  title: {
+    name: '',
+    rank: 0,
+  },
+  score: [],
+  saleInfo: {
+    leasePrice: 0,
+    salePrice: 0,
+  },
+};

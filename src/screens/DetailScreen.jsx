@@ -15,26 +15,19 @@ import { DetailContainer } from '../components/detail/InvestmentScore';
 import { blueColor, greyColor } from '../theme';
 import { useNavigation } from '@react-navigation/native';
 import detailArr from '../../mock/detailData.json';
+import { renderData } from '../constant';
 
 const DetailScreen = ({ route }) => {
-  console.log(route.params);
   const { text } = route.params;
   const navigation = useNavigation();
   const [like, setLike] = useState(false);
   const [scrollToY, setScrollToY] = useState(0);
   const [ref, setRef] = useState();
-  const [passData, setPassData] = useState({
-    id: 1,
-    title: {
-      name: '',
-      rank: 0,
-    },
-  });
+  const [passData, setPassData] = useState(renderData);
   const [otherRank, setOtherRank] = useState([
     { name: '', rank: 0 },
     { name: '', rank: 0 },
   ]);
-
   const activeLike = () => {
     setLike(!like);
   };
@@ -65,7 +58,7 @@ const DetailScreen = ({ route }) => {
         otherRank={otherRank}
       />
       <InvestmentScore score={passData.score} />
-      <TransactionPrice />
+      <TransactionPrice saleInfo={passData.saleInfo} />
       <View
         onLayout={e => {
           const layout = e.nativeEvent.layout;

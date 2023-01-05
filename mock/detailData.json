@@ -3,7 +3,8 @@
     "id": 1,
     "title": {
       "name": "반포자이",
-      "rank": 1
+      "rank": 1,
+      "address": "서울특별시 서초구 반포1동"
     },
     "score": [
       {
@@ -26,13 +27,18 @@
         "value": 89000000,
         "top": "0%"
       }
-    ]
+    ],
+    "saleInfo": {
+      "salePrice": 3720000000,
+      "leasePrice": 1350000000
+    }
   },
   {
     "id": 2,
     "title": {
       "name": "갈곶피오레",
-      "rank": 2
+      "rank": 2,
+      "address": "경기도 오산시 갈곶동"
     },
     "score": [
       {
@@ -55,13 +61,18 @@
         "value": 8300000,
         "top": "82%"
       }
-    ]
+    ],
+    "saleInfo": {
+      "salePrice": 360000000,
+      "leasePrice": 290000000
+    }
   },
   {
     "id": 3,
     "title": {
       "name": "미소지움",
-      "rank": 3
+      "rank": 3,
+      "address": "경기도 오산시 원동"
     },
     "score": [
       {
@@ -84,13 +95,18 @@
         "value": 14000000,
         "top": "42%"
       }
-    ]
+    ],
+    "saleInfo": {
+      "salePrice": 370000000,
+      "leasePrice": 220000000
+    }
   },
   {
     "id": 4,
     "title": {
       "name": "원동두산,동아",
-      "rank": 4
+      "rank": 4,
+      "address": "경기도 오산시 원동"
     },
     "score": [
       {
@@ -113,13 +129,18 @@
         "value": 110000000,
         "top": "65%"
       }
-    ]
+    ],
+    "saleInfo": {
+      "salePrice": 360000000,
+      "leasePrice": 290000000
+    }
   },
   {
     "id": 5,
     "title": {
       "name": "삼화",
-      "rank": 5
+      "rank": 5,
+      "address": "경기도 군포시 금정동"
     },
     "score": [
       {
@@ -142,13 +163,18 @@
         "value": 11000000,
         "top": "65%"
       }
-    ]
+    ],
+    "saleInfo": {
+      "salePrice": 500000000,
+      "leasePrice": 260000000
+    }
   },
   {
     "id": 6,
     "title": {
       "name": "오산대동다숲",
-      "rank": 6
+      "rank": 6,
+      "address": "경기도 오산시 오산동"
     },
     "score": [
       {
@@ -171,13 +197,18 @@
         "value": 7000000,
         "top": "89%"
       }
-    ]
+    ],
+    "saleInfo": {
+      "salePrice": 210000000,
+      "leasePrice": 170000000
+    }
   },
   {
     "id": 7,
     "title": {
       "name": "오산원동힐스테이트",
-      "rank": 7
+      "rank": 7,
+      "address": "경기도 오산시 원동"
     },
     "score": [
       {
@@ -200,13 +231,18 @@
         "value": 11000000,
         "top": "67%"
       }
-    ]
+    ],
+    "saleInfo": {
+      "salePrice": 400000000,
+      "leasePrice": 280000000
+    }
   },
   {
     "id": 8,
     "title": {
-      "name": "",
-      "rank": 2
+      "name": "진로",
+      "rank": 8,
+      "address": "경기도 시흥시 정왕동"
     },
     "score": [
       {
@@ -229,13 +265,18 @@
         "value": 58.4,
         "top": "68%"
       }
-    ]
+    ],
+    "saleInfo": {
+      "salePrice": 280000000,
+      "leasePrice": 200000000
+    }
   },
   {
     "id": 9,
     "title": {
-      "name": "",
-      "rank": 2
+      "name": "서대문노블루체",
+      "rank": 9,
+      "address": "서울특별시 서대문구 홍은동"
     },
     "score": [
       {
@@ -258,14 +299,20 @@
         "value": 58.4,
         "top": "68%"
       }
-    ]
+    ],
+    "saleInfo": {
+      "salePrice": 270000000,
+      "leasePrice": 260000000
+    }
   },
   {
     "id": 10,
     "title": {
-      "name": "",
-      "rank": 2
+      "name": "위산일리온시티",
+      "rank": 10,
+      "address": "서울특별시 은평구 응암1동"
     },
+
     "score": [
       {
         "id": 1,
@@ -287,6 +334,45 @@
         "value": 58.4,
         "top": "68%"
       }
-    ]
+    ],
+    "saleInfo": {
+      "salePrice": 230000000,
+      "leasePrice": 220000000
+    }
+  },
+  {
+    "id": 11,
+    "title": {
+      "name": "",
+      "rank": 11,
+      "address": "서울특별시 은평구 응암1동"
+    },
+
+    "score": [
+      {
+        "id": 1,
+        "value": "68.5%",
+        "top": "68%"
+      },
+      {
+        "id": 2,
+        "value": 130000000,
+        "top": "68%"
+      },
+      {
+        "id": 3,
+        "value": 58.4,
+        "top": "68%"
+      },
+      {
+        "id": 4,
+        "value": 58.4,
+        "top": "68%"
+      }
+    ],
+    "saleInfo": {
+      "salePrice": 230000000,
+      "leasePrice": 220000000
+    }
   }
 ]
