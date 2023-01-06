@@ -44,7 +44,6 @@ const MapView = styled.View`
   height: 140px;
   justify-content: center;
   align-items: center;
-  /* background-color: red; */
 `;
 
 export default BasicInformation;

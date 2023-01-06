@@ -100,10 +100,10 @@ const DetailScreenContainer = styled.ScrollView`
   width: 100%;
 `;
 const BottomBtn = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
+  flex-direction: row;
   height: 55px;
   width: 49%;
   border-radius: 10px;
-  flex-direction: row;
   border: 1px solid ${blueColor};
   align-items: center;
   justify-content: center;

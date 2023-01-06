@@ -1,8 +1,10 @@
+import { useNavigation } from '@react-navigation/native';
 import { Image, TouchableOpacity, View } from 'react-native';
 import styled from 'styled-components/native';
 import { blueColor } from '../../theme';
 import { DetailContainer } from './InvestmentScore';
 const Service = () => {
+  const navigation = useNavigation();
   return (
     <DetailContainer style={{ flexDirection: 'row' }}>
       <View>

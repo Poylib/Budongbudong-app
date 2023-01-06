@@ -47,7 +47,7 @@ const Root = () => {
         options={{
           headerBackTitleVisible: false,
           headerTintColor: 'black',
-          title: '정정 및 요청 문의',
+          title: '준비중',
         }}
       />
     </RootNav.Navigator>
