@@ -109,7 +109,6 @@ const Modal = styled.View`
   bottom: 0;
   height: 108%;
   width: 100%;
-  opacity: 1;
   background-color: rgba(0, 0, 0, 0.5);
 `;
 

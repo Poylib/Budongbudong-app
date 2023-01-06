@@ -31,6 +31,7 @@ const SearchBar = ({
         autoCorrect={false}
         onChangeText={onChangeText}
         onPressIn={() => setModal(true)}
+        clearButtonMode={'always'}
         onSubmitEditing={SearchActive}
       />
       <SearchIcon onPress={SearchActive}>
@@ -41,23 +42,20 @@ const SearchBar = ({
 };
 
 const SearchView = styled.View`
+  flex-direction: row;
   align-items: center;
-  margin-top: 10px;
-  width: 100%;
-`;
-
-const Search = styled.TextInput`
-  padding: 12px;
-  margin: 0 10px;
+  margin: 10px auto 0 auto;
   width: 90%;
   border-radius: 5px;
   border: 1px solid grey;
 `;
 
-const SearchIcon = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
-  position: absolute;
-  top: 18%;
-  right: 8%;
+const Search = styled.TextInput`
+  padding: 12px;
+  margin: 0 10px;
+  width: 85%;
 `;
+
+const SearchIcon = styled.TouchableOpacity.attrs({ activeOpacity: 1 })``;
 
 export default SearchBar;

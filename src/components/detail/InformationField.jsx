@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/native';
-import { FilterData, schoolData } from '../../constant';
+import { FilterData, schoolData, schoolList } from '../../constant';
 import { blueColor } from '../../theme';
 import CategoryBtn from './CategoryBtn';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import { DetailContainer, TitleText } from './InvestmentScore';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 import { GreyLine } from './SpaceSelectModal';
-
+import { useNavigation } from '@react-navigation/native';
 const InformationField = () => {
   const [select, setSelect] = useState('');
-  const [school, setSchool] = useState('');
+  const [school, setSchool] = useState('미취학');
+  const [selectList, setSelectList] = useState(schoolList[0].list);
+  const navigation = useNavigation();
+  useEffect(() => {
+    schoolList.map(el => school === el.title && setSelectList(el.list));
+  }, [school]);
   return (
     <DetailContainer>
       <TitleText>분야별 정보</TitleText>
@@ -52,6 +57,14 @@ const InformationField = () => {
           </View>
         </Score>
         <CategoryBtn data={schoolData} setFunc={setSchool} />
+        {selectList.map(list => {
+          return (
+            <SchoolRow onPress={() => navigation.navigate('Contact')} key={list.id}>
+              <Text>{list.name}</Text>
+              <Text>></Text>
+            </SchoolRow>
+          );
+        })}
       </FilterView>
       <GreyLine />
       <FilterView>
@@ -123,6 +136,13 @@ const Medal = styled.View`
   margin: 20px;
   width: 60px;
   height: 60px;
+`;
+
+const SchoolRow = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px auto;
+  width: 70%;
 `;
 
 export default InformationField;
