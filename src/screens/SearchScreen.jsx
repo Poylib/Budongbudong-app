@@ -105,12 +105,12 @@ const SearchScreen = () => {
 };
 
 const Modal = styled.View`
-  height: 108%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 1;
   position: absolute;
   bottom: 0;
+  height: 108%;
+  width: 100%;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5);
 `;
 
 const SearchView = styled.View`
@@ -122,15 +122,15 @@ const SearchView = styled.View`
 const SearchRow = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   flex-direction: row;
   align-items: center;
-  width: 100%;
   margin: 7px 0;
+  width: 100%;
 `;
 const IconBox = styled.View`
   align-items: center;
   justify-content: center;
-  border-radius:50px
   width: 25px;
   height: 25px;
+  border-radius:50px
   background-color: lightgrey;
 `;
 

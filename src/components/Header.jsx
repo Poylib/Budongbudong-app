@@ -34,20 +34,20 @@ const FixedHeader = ({ sort, setSort }) => {
 };
 
 const HeaderContainer = styled.View`
+  align-items: center;
+  justify-content: flex-end;
   padding-bottom: 15px;
   width: 100%;
   height: 60px;
   background-color: white;
-  align-items: center;
-  justify-content: flex-end;
 `;
 
 const SortFilterBar = styled.View`
-  width: 90%;
-  height: 20px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
+  height: 20px;
 `;
 
 const Sort = styled.View`

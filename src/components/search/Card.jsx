@@ -44,9 +44,9 @@ const SearchListContainer = styled.TouchableOpacity`
 const Content = styled.View`
   flex-direction: row;
   justify-content: space-between;
+  padding: 20px 25px;
   width: 100%;
   height: 120px;
-  padding: 20px 25px;
   border-radius: 7px;
   background-color: white;
 `;
@@ -68,12 +68,12 @@ const Img = styled.Image`
 `;
 
 const ImegeSection = styled.View`
-  border: 0.5px solid lightgray;
-  border-radius: 10px;
   align-items: center;
   justify-content: center;
   width: 80px;
   height: 80px;
+  border: 0.5px solid lightgray;
+  border-radius: 10px;
 `;
 
 export default Card;

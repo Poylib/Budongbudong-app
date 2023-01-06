@@ -116,10 +116,10 @@ const MoreBtn = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
 const RecList = styled.FlatList`
   position: static;
   left: -15px;
-  height: 230px;
-  width: 110%;
   padding: 5px 0;
   margin-bottom: 30px;
+  height: 230px;
+  width: 110%;
 `;
 
 const Card = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
@@ -128,19 +128,19 @@ const Card = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   border-radius: 10px;
 `;
 const ImgView = styled.View`
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 70%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   background-color: ${greyColor};
 `;
 const Img = styled.Image`
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   width: 100%;
   height: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 `;
 
 const Icon = styled.Image`
@@ -150,14 +150,14 @@ const Icon = styled.Image`
 
 const TextView = styled.View`
   flex-direction: row;
-  padding: 10px 15px;
   justify-content: space-between;
+  padding: 10px 15px;
 `;
 
 const GreyText = styled.Text.attrs({ ellipsizeMode: 'tail', numberOfLines: 1 })`
   font-size: 12px;
-  color: grey;
   font-weight: 400;
+  color: grey;
 `;
 const BoldText = styled.Text.attrs({ ellipsizeMode: 'tail', numberOfLines: 1 })`
   font-weight: 600;

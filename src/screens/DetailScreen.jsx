@@ -101,21 +101,21 @@ const DetailScreenContainer = styled.ScrollView`
 `;
 const BottomBtn = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   height: 55px;
   width: 49%;
   border-radius: 10px;
   border: 1px solid ${blueColor};
-  align-items: center;
-  justify-content: center;
 `;
 
 const IconView = styled.View`
-  width: 35px;
-  height: 35px;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
   margin-right: 10px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
   background-color: ${greyColor};
 `;
 
@@ -125,11 +125,11 @@ const BtnText = styled.Text`
 `;
 
 const PrescribeBtn = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
-  height: 55px;
-  margin-top: 10px;
-  border-radius: 10px;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
+  height: 55px;
+  border-radius: 10px;
   background-color: ${blueColor};
 `;
 export default DetailScreen;

@@ -50,28 +50,28 @@ const LoginScreen = () => {
 };
 
 const SocialLogin = styled.View`
-  height: 30%;
   padding: 30px 20px;
+  height: 30%;
 `;
 
 const KakaoLogin = styled.TouchableOpacity`
-  width: 100%;
-  height: 55px;
-  background-color: #fee500;
-  border-radius: 12px;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  width: 100%;
+  height: 55px;
+  border-radius: 12px;
+  background-color: #fee500;
 `;
 
 const KakaoImg = styled.Image`
+  margin-right: 7px;
   width: 20px;
   height: 20px;
-  margin-right: 7px;
 `;
 
 const KakaoText = styled.Text`
-  font-size: 20px;
   margin: 0 auto;
+  font-size: 20px;
 `;
 export default LoginScreen;

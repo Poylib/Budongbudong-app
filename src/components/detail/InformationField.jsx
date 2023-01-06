@@ -100,8 +100,8 @@ const ExplainText = styled.Text`
 const Chart = styled.View`
   justify-content: center;
   align-items: center;
-  width: 90%;
   margin: 20px auto;
+  width: 90%;
   height: 300px;
   background-color: lightgrey;
 `;
@@ -115,9 +115,9 @@ const Score = styled.View`
   align-items: center;
 `;
 const FillterText = styled.Text`
+  margin-bottom: 10px;
   width: 100%;
   font-size: 15px;
-  margin-bottom: 10px;
 `;
 const Medal = styled.View`
   margin: 20px;

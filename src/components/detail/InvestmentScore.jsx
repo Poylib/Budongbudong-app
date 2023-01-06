@@ -27,15 +27,14 @@ const InvestmentScore = ({ score }) => {
   );
 };
 export const DetailContainer = styled.View`
+  margin-bottom: 15px;
   width: 100%;
   padding: 25px 15px 0 15px;
-  margin-bottom: 15px;
   background-color: white;
 `;
 export const TitleText = styled.Text`
-  font-size: 20px;
   font-weight: 600;
-  /* margin-bottom: 20px; */
+  font-size: 20px;
 `;
 
 const ContentColumn = styled.View`
@@ -52,10 +51,9 @@ const RowName = styled.Text`
   font-size: 15px;
 `;
 const StatsBox = styled.View`
-  align-items: center;
   flex-direction: row;
+  align-items: center;
 `;
-const RowPrice = styled.Text``;
 const RowPercent = styled.Text`
   color: ${blueColor};
 `;

@@ -105,13 +105,13 @@ export const NameRow = styled.View`
 `;
 
 const TitleToggle = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
-  height: 25px;
-  width: 85px;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  flex-direction: row;
+  height: 25px;
+  width: 85px;
   border-radius: 10px;
+  background-color: white;
 `;
 
 const Average = styled.View`
@@ -122,8 +122,8 @@ const Average = styled.View`
 `;
 
 const AverageView = styled.View`
-  width: 50%;
   align-items: center;
+  width: 50%;
 `;
 
 export const HorizontalBorder = styled.View`
@@ -151,8 +151,8 @@ const TradeTitleRow = styled.View`
 `;
 const TradeRow = styled.View`
   flex-direction: row;
-  padding: 0 20px;
   justify-content: space-between;
+  padding: 0 20px;
 `;
 export const MoreButton = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   height: 60px;

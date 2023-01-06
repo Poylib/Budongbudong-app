@@ -17,10 +17,9 @@ const SaleInformation = () => {
 };
 
 const BackImg = styled.Image`
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
   width: 80%;
   height: 240px;
-  margin-bottom: 30px;
 `;
 
 const BlankText = styled.Text`

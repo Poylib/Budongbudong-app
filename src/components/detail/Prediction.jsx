@@ -16,10 +16,10 @@ const Prediction = () => {
 };
 
 const Chart = styled.View`
+  align-items: center;
+  margin: 20px auto;
   width: 90%;
   height: 250px;
-  margin: 20px auto;
-  align-items: center;
 `;
 
 const BlankChart = styled.Image`

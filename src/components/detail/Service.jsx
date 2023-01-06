@@ -29,9 +29,9 @@ const ServiceText = styled.Text`
 `;
 const ContactText = styled.Text`
   padding: 20px 0;
-  color: ${blueColor};
   font-size: 16px;
   font-weight: 600;
+  color: ${blueColor};
 `;
 
 const ImgView = styled.View`

@@ -51,8 +51,8 @@ const Container = styled.View`
   flex: 1;
   margin-top: 170px;
   padding: 25px;
-  background-color: white;
   border-radius: 15px;
+  background-color: white;
 `;
 const TitleRow = styled.View`
   flex-direction: row;
@@ -74,27 +74,27 @@ const ContentRow = styled.View`
 `;
 
 const BoldBlue = styled.Text`
-  color: ${blueColor};
   font-weight: 700;
   font-size: 15px;
+  color: ${blueColor};
 `;
 const ThinBlue = styled.Text`
   color: ${blueColor};
 `;
 
 const TextView = styled.View`
-  width: ${({ width }) => width}%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: ${({ width }) => width}%;
 `;
 
 const ContentTouch = styled.TouchableOpacity.attrs({ activeOpacity: 1 })``;
 
 export const GreyLine = styled.View`
+  height: 1px;
   width: 100%;
   background-color: ${greyColor};
-  height: 1px;
 `;
 
 export default SpaceSelectModal;

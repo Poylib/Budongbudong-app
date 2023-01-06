@@ -31,12 +31,12 @@ const CategoryBtn = ({ data, setFunc }) => {
 };
 const Category = styled.View`
   flex-direction: row;
-  background-color: ${greyColor};
-  padding: 3px;
-  border-radius: 50px;
   margin-top: 10px;
+  padding: 3px;
   width: 100%;
   height: ${({ boxheight }) => `${boxheight}px`};
+  border-radius: 50px;
+  background-color: ${greyColor};
 `;
 const DetailToggle = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   flex: 1;

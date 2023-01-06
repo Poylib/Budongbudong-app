@@ -42,22 +42,22 @@ const SearchBar = ({
 
 const SearchView = styled.View`
   align-items: center;
-  width: 100%;
   margin-top: 10px;
+  width: 100%;
 `;
 
 const Search = styled.TextInput`
   padding: 12px;
   margin: 0 10px;
   width: 90%;
-  border: 1px solid grey;
   border-radius: 5px;
+  border: 1px solid grey;
 `;
 
 const SearchIcon = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
+  position: absolute;
   top: 18%;
   right: 8%;
-  position: absolute;
 `;
 
 export default SearchBar;

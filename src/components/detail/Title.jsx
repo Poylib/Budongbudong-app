@@ -44,12 +44,12 @@ const Title = ({ activeLike, like, otherRank, data }) => {
 };
 
 const TitleContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   padding: 10px 15px;
   margin-bottom: 15px;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
   background-color: white;
 `;
 
@@ -59,26 +59,26 @@ const SmallRanking = styled.Text`
   color: lightgrey;
 `;
 const RankBox = styled.View`
-  width: 80px;
-  margin-right: 10px;
   justify-content: center;
   align-items: center;
+  margin-right: 10px;
+  width: 80px;
 `;
 
 const BigRankig = styled.View`
-  width: 100%;
-  height: 40px;
-  margin: 0 auto;
-  border-radius: 5px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
   background-color: ${blueColor};
 `;
 const BoldText = styled.Text.attrs({ ellipsizeMode: 'tail', numberOfLines: 1 })`
+  margin: 3px 0;
   font-size: 24px;
   font-weight: 600;
-  margin: 3px 0;
 `;
 const Hline = styled.View`
   width: 100%;
@@ -86,22 +86,22 @@ const Hline = styled.View`
   background-color: white;
 `;
 const TextBox = styled.View`
-  width: 60%;
   justify-content: center;
+  width: 60%;
 `;
 
 const RankBtn = styled.TouchableOpacity.attrs({ activeOpacity: 1 })``;
 
 const LightText = styled.Text.attrs({ ellipsizeMode: 'tail', numberOfLines: 1 })`
-  color: lightgrey;
   font-size: 15px;
+  color: lightgrey;
 `;
 export const LikeButton = styled.TouchableOpacity.attrs({ activeOpacity: 1 })`
   align-items: center;
   justify-content: center;
-  border-radius: 50px;
   width: 35px;
   height: 35px;
+  border-radius: 50px;
   background-color: ${greyColor};
 `;
 

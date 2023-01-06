@@ -42,11 +42,11 @@ const Carousel = ({ pages, pageWidth, gap, offset }) => {
 const Container = styled.View`
   position: static;
   left: -15px;
-  height: 240px;
-  width: 110%;
   justify-content: center;
   align-items: center;
   margin: 30px 0;
+  height: 240px;
+  width: 110%;
 `;
 
 const PageItem = styled.View`
@@ -62,9 +62,9 @@ const WhiteTitle = styled.Text`
 `;
 
 const Content = styled.Text`
-  color: white;
   font-size: 18px;
   font-weight: 500;
+  color: white;
 `;
 
 const PageBg = styled.Image`
@@ -91,9 +91,9 @@ const TextView = styled.View`
 `;
 
 const WhiteLine = styled.View`
+  margin: 5px 0;
   width: 50%;
   height: 2px;
-  margin: 5px 0;
   background-color: white;
 `;
 export default Carousel;

@@ -37,13 +37,13 @@ const TextRow = styled.View`
   padding: 10px 0;
 `;
 const BasicName = styled.Text`
-  color: grey;
   width: 90px;
+  color: grey;
 `;
 const MapView = styled.View`
-  height: 140px;
   justify-content: center;
   align-items: center;
+  height: 140px;
 `;
 
 export default BasicInformation;

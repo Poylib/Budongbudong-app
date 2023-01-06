@@ -34,9 +34,9 @@ const SplashScreenContainer = styled.View`
 `;
 
 const LogoImage = styled.Image`
+  margin: 30px;
   width: 80px;
   height: 80px;
-  margin: 30px;
 `;
 
 export default SplashScreen;
