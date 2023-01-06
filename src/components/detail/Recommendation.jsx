@@ -7,7 +7,6 @@ import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import { blueColor, greyColor, SCREEN_WIDTH, styles } from '../../theme';
 import { DetailContainer, TitleText } from './InvestmentScore';
 import { NameRow } from './TransactionPrice';
-import RecData from '../../../mock/RecData.json';
 import SearchData from '../../../mock/SearchData.json';
 import { imgArr } from '../../constant/buildingImg';
 import { LikeButton } from './Title';

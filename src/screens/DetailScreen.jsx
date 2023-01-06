@@ -38,7 +38,6 @@ const DetailScreen = ({ route }) => {
   const handleScroll = toY => {
     ref.scrollTo({ y: toY, animated: true });
   };
-
   useEffect(() => {
     let selectRank = 0;
     const data = detailArr.filter((data, idx) => {

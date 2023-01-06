@@ -167,5 +167,29 @@
     "img": null,
     "like": 30,
     "address": "경기도 평택시 장당동"
+  },
+  {
+    "id": 15,
+    "text": "창원노블레스찬영타운",
+    "price": 580000000,
+    "pyeong": "108㎡(33평)",
+    "leasePrice": 500000000,
+    "profit": 20,
+    "graph": "assets/images/graph.jpg",
+    "img": null,
+    "like": 35,
+    "address": "부산광역시 진구 부전동"
+  },
+  {
+    "id": 16,
+    "text": "서면더클래식관희",
+    "price": 980000000,
+    "pyeong": "108㎡(33평)",
+    "leasePrice": 880000000,
+    "profit": 29,
+    "graph": "assets/images/graph.jpg",
+    "img": null,
+    "like": 40,
+    "address": "부산광역시 진구 부전동"
   }
 ]
