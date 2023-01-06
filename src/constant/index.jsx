@@ -48,3 +48,52 @@ export const renderData = {
     salePrice: 0,
   },
 };
+
+export const FilterData = {
+  buttonStyle: {
+    height: 35,
+    size: 12,
+  },
+  dataSet: [
+    {
+      id: 1,
+      title: '교통',
+    },
+    {
+      id: 2,
+      title: '교육',
+    },
+    {
+      id: 3,
+      title: '주거환경',
+    },
+    {
+      id: 4,
+      title: '편의시설',
+    },
+  ],
+};
+export const schoolData = {
+  buttonStyle: {
+    height: 35,
+    size: 12,
+  },
+  dataSet: [
+    {
+      id: 1,
+      title: '미취학',
+    },
+    {
+      id: 2,
+      title: '초등학교',
+    },
+    {
+      id: 3,
+      title: '중학교',
+    },
+    {
+      id: 4,
+      title: '고등학교',
+    },
+  ],
+};

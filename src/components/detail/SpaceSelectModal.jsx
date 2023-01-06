@@ -91,7 +91,7 @@ const TextView = styled.View`
 
 const ContentTouch = styled.TouchableOpacity.attrs({ activeOpacity: 1 })``;
 
-const GreyLine = styled.View`
+export const GreyLine = styled.View`
   width: 100%;
   background-color: ${greyColor};
   height: 1px;
