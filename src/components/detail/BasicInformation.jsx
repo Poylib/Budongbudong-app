@@ -20,7 +20,7 @@ const BasicInformation = () => {
         })}
       </TextView>
       <MapView>
-        <Text>MapView</Text>
+        <Map source={require('../../../assets/images/map.png')}></Map>
       </MapView>
     </DetailContainer>
   );
@@ -43,7 +43,13 @@ const BasicName = styled.Text`
 const MapView = styled.View`
   justify-content: center;
   align-items: center;
-  height: 140px;
+  height: 170px;
+  width: 90%;
+  margin: 0 auto 30px auto;
+`;
+const Map = styled.Image`
+  width: 100%;
+  height: 100%;
 `;
 
 export default BasicInformation;

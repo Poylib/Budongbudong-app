@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/native';
 import { FilterData, schoolData, schoolList } from '../../constant';
-import { blueColor } from '../../theme';
+import { blueColor, greyColor } from '../../theme';
 import CategoryBtn from './CategoryBtn';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import { DetailContainer, TitleText } from './InvestmentScore';
-import { Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import { GreyLine } from './SpaceSelectModal';
 import { useNavigation } from '@react-navigation/native';
 const InformationField = () => {
@@ -116,7 +116,7 @@ const Chart = styled.View`
   margin: 20px auto;
   width: 90%;
   height: 300px;
-  background-color: lightgrey;
+  background-color: ${greyColor};
 `;
 
 const FilterView = styled.View`
