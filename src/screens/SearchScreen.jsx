@@ -6,7 +6,7 @@ import FixedHeader from '../components/Header';
 import Card from '../components/search/Card';
 import styled from 'styled-components/native';
 import SearchData from '../../mock/SearchData.json';
-import { backGroundColor, greyColor, SCREEN_WIDTH } from '../theme';
+import { backGroundColor, blueColor, greyColor, SCREEN_WIDTH } from '../theme';
 import SearchBar from '../components/search/SearchBar';
 
 const SearchScreen = () => {
@@ -65,7 +65,8 @@ const SearchScreen = () => {
           <Modal>
             <SearchView>
               {searchList.slice(0, 8).map(search => {
-                const inText = `${search.address} ${search.text}`;
+                let addressSplit = search.address.split(query);
+                let nameSplit = search.text.split(query);
                 return (
                   <SearchRow
                     key={search.id}
@@ -76,7 +77,15 @@ const SearchScreen = () => {
                     <IconBox>
                       <Ionicons name={'map-outline'} size={15} color={'white'} />
                     </IconBox>
-                    <SearchText>{inText}</SearchText>
+                    <SearchText>
+                      {addressSplit[0]}
+                      <SearchText style={{ color: blueColor }}>{addressSplit.length > 1 ? query : ''}</SearchText>
+                      <SearchText>{addressSplit[1]} </SearchText>
+
+                      <SearchText>{nameSplit[0]}</SearchText>
+                      <SearchText style={{ color: blueColor }}>{nameSplit.length > 1 ? query : ''}</SearchText>
+                      <SearchText>{nameSplit[1]}</SearchText>
+                    </SearchText>
                   </SearchRow>
                 );
               })}
