@@ -5,6 +5,7 @@
 - 프로젝트 설명
 - 프로젝트 사용 방법
 - 폴더 구조
+- 상세 설명
 
 ## 프로젝트 설명
 
@@ -24,8 +25,8 @@
 
 1. 레포지토리 복사 후 프로젝트 폴더에서 `npm install`
 2. Xcode 12.5 혹은 그 이상의 버전 사용시 `/ios` 폴더로 이동 후 `pod install`
-3. `npm run ios` 혹은 `npm run android`  
-   (yarn 사용시: `yarn ios` or `yarn android`)
+3. `npm start`
+4. `npm run ios` 혹은 `npm run android`
 
 ## 폴더 구조
 
@@ -43,3 +44,21 @@
   - `utils` : 재사용되는 함수를 저장했습니다.
 - `mock` : UI 테스트 관련 .json 파일을 담았습니다.
 - `assets` : UI 구성에 필요한 아이콘, 이미지를 저장했습니다.
+
+## 상세 설명
+
+### 1. 앱 시작시 splashScreen
+
+![splash](https://user-images.githubusercontent.com/100523313/212856183-49c489c9-4185-44b6-bee3-b6d2fb9aace5.gif)  
+</br>
+
+- 서버 없이 작업했기 때문에 AsyncStorage를 이용해 토큰을 사용했습니다.
+- 앱 진입시 SplashScreen을 띄우고 AsyncStorage에서 login 정보를 가져옵니다. 한 번 로그인한 유저는 바로 HomeScreen으로, 최초 접속 유저는 LoginScreen으로 가도록 했습니다.
+
+### 2. 카카오톡 로그인
+
+![login](https://user-images.githubusercontent.com/100523313/212856999-1b5da9ee-215f-41ae-9beb-5ac288f1abef.gif)  
+</br>
+
+- 소셜로그인으로 카카오톡과 연결 했습니다.
+- 로그인시 AsyncStorage에 받은 토큰을 저장하며, 구현한 페이지인 SearchScreen으로 이동합니다.
